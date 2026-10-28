@@ -240,3 +240,6 @@ footer .wordmark { font-size: 1.3rem; }
 
 /* Grid children may shrink below their content (the terminal scrolls instead). */
 .hero .wrap > *, .split > *, .grid > *, .modes > *, .contact > * { min-width: 0; }
+.signin { color: var(--dim); text-decoration: none; font-weight: 600; font-size: .95rem; }
+.signin:hover { color: var(--ink); }
+@media (max-width: 640px) { .signin { margin-left: 0; } }
