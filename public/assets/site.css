@@ -60,6 +60,14 @@
     color-scheme: dark;
   }
 }
+:root[data-theme="dark"] {
+  --bg: #14111c; --surface: #1e1a2a; --line: #2e2840; --ink: #ece9f5; --dim: #a39db8;
+  --accent: var(--v4); --accent-text: var(--v3); --on-accent: #14111c;
+  --tint: #221c33; --tint-ink: var(--v2);
+  --ok-bg: #163326; --ok: #7fd8ab;
+  --shadow: 0 0 0 1px var(--line);
+  color-scheme: dark;
+}
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 80px; -webkit-text-size-adjust: 100%; }
