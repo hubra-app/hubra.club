@@ -1,0 +1,15 @@
+# Publishes public/ to GitLab Pages on every push to the default branch.
+# The site is plain static files, so there is nothing to build.
+pages:
+  stage: deploy
+  image: alpine:3.20
+  script:
+    - test -f public/index.html
+    # Pre-compress text files; GitLab Pages serves .gz and .br next to the original.
+    - apk add --no-cache brotli gzip >/dev/null
+    - find public -type f \( -name '*.html' -o -name '*.css' -o -name '*.svg' -o -name '*.xml' -o -name '*.txt' \) -exec gzip -k -9 {} \; -exec brotli -k {} \;
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
