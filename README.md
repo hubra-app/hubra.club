@@ -20,9 +20,8 @@ Both pages are written by hand. When you change one, change the other too.
 
 ## Before going live
 
-Fill in the yellow `[…]` placeholders in `public/impressum/index.html` and
-`public/datenschutz/index.html` (name, address, hosting provider), and make
-sure `hallo@hubra.club` receives mail.
+Make sure `hi@hubra.club` receives mail. If the site moves away from GitHub
+Pages, update the hosting provider in `public/datenschutz/index.html`.
 
 ## Deploy on GitLab Pages
 
