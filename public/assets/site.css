@@ -94,7 +94,7 @@ code, pre { font-family: var(--mono); font-size: .86em; }
 .top .wrap { display: flex; align-items: center; gap: 24px; height: 68px; }
 .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; }
 .brand svg { width: 34px; height: 34px; flex: none; }
-.wordmark { font-family: var(--display); font-weight: 800; letter-spacing: -.045em; font-size: 1.7rem; line-height: 1; }
+.wordmark { font-family: var(--display); font-weight: 800; letter-spacing: -.02em; font-size: 1.7rem; line-height: 1; }
 .nav { display: flex; gap: 22px; margin-left: auto; }
 .nav a { color: var(--dim); text-decoration: none; font-weight: 500; font-size: .95rem; }
 .nav a:hover { color: var(--ink); }
