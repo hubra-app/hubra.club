@@ -1,5 +1,7 @@
 # hubra.club
 
+[![Pages](https://github.com/hubra-app/hubra.club/actions/workflows/pages.yml/badge.svg?branch=main)](https://github.com/hubra-app/hubra.club/actions/workflows/pages.yml?query=branch%3Amain)
+
 The Hubra landing page. Plain static files in `public/`, no build step, no
 external requests: fonts, icons and images are all served from the site.
 
