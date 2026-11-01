@@ -14,6 +14,7 @@ external requests: fonts, icons and images are all served from the site.
 | `public/assets/site.css` | All styles, brand tokens at the top |
 | `public/assets/fonts/` | Bricolage Grotesque and Hanken Grotesk (SIL OFL 1.1), latin + latin-ext |
 | `public/assets/og.png`, `og-en.png` | Link preview images (1200×630) |
+| `public/bimi.svg` | Sender logo for mail (BIMI, SVG Tiny PS), served at `https://hubra.club/bimi.svg`. Copy of `brand/hubra-bimi.svg` in hubra-app/hubra |
 
 Preview locally with `python3 -m http.server -d public 8000` and open
 http://localhost:8000.
