@@ -434,3 +434,23 @@ section { padding-block: 96px; }
 a.more-link:hover { text-decoration: underline; }
 .grid.two { grid-template-columns: repeat(2, 1fr); }
 @media (max-width: 640px) { .grid.two { grid-template-columns: 1fr; } }
+
+/* ── pricing plans and add-ons from the public API ──────────────────────── */
+.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 32px; }
+.plan { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 28px; display: grid; align-content: start; gap: 12px; box-shadow: var(--shadow-sm); }
+.plan.hi { border: 2px solid var(--accent); box-shadow: var(--shadow-md); }
+.plan h3 { font-size: 1.35rem; }
+.plan .plan-desc, .plan .plan-year { color: var(--text-2); }
+.plan .big { font: 800 2.2rem/1 var(--display); letter-spacing: -.03em; color: var(--text); }
+.plan .big small { font: 500 1rem/1 var(--body); color: var(--text-2); letter-spacing: 0; }
+.plan .checks { margin-block: 4px 8px; }
+.plan .btn { justify-self: start; margin-top: auto; }
+.addons { margin-top: 32px; display: grid; gap: 8px; }
+.addons > p { color: var(--text-2); }
+.addon-list { list-style: none; margin: 8px 0 0; padding: 0; border: 1px solid var(--border); border-radius: 16px; background: var(--surface); overflow: hidden; }
+.addon-list li { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 14px 20px; }
+.addon-list li + li { border-top: 1px solid var(--border); }
+.addon-list li div { display: grid; gap: 2px; min-width: 0; }
+.addon-list li div span { color: var(--text-2); font-size: .94rem; }
+.addon-price { font-weight: 600; white-space: nowrap; }
+.plugin-price { font-weight: 600; color: var(--accent-text); }
