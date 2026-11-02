@@ -95,23 +95,33 @@
     return mb >= 1024 ? num(Math.round((mb / 1024) * 10) / 10) + ' GB' : num(mb) + ' MB'
   }
   var getJSON = function (path, done) {
+    // Give up after 6 s. Down, in maintenance (503), an HTML error page or
+    // a broken answer all leave the static text in place.
     if (!window.fetch) return
-    fetch(API + path, { credentials: 'omit' })
+    var ctrl = window.AbortController ? new AbortController() : null
+    var timer = ctrl && setTimeout(function () {
+      ctrl.abort()
+    }, 6000)
+    fetch(API + path, { credentials: 'omit', signal: ctrl ? ctrl.signal : undefined })
       .then(function (r) {
         return r.ok ? r.json() : null
       })
       .then(function (d) {
-        if (d) done(d)
+        if (d && typeof d === 'object') done(d)
       })
       .catch(function () {})
+      .then(function () {
+        clearTimeout(timer)
+      })
   }
 
   var plansBox = document.querySelector('[data-plans]')
   if (plansBox) {
     getJSON('/api/v1/public/pricing', function (d) {
-      var plans = (d.plans || []).slice().sort(function (a, b) {
+      var plans = (Array.isArray(d.plans) ? d.plans : []).slice().sort(function (a, b) {
         return (a.sort || 0) - (b.sort || 0)
       })
+      var built = document.createDocumentFragment()
       if (plans.length) {
         plans.forEach(function (p) {
           var card = el('article', 'plan' + (p.highlighted ? ' hi' : ''))
@@ -140,18 +150,20 @@
           var a = el('a', 'btn ' + (p.highlighted ? 'btn-p' : 'btn-s'), p.price_month_chf == null ? L.ask : L.start)
           a.href = p.price_month_chf == null ? 'mailto:hi@hubra.club' : 'https://sso.hubra.club/start'
           card.appendChild(a)
-          plansBox.appendChild(card)
+          built.appendChild(card)
         })
+        plansBox.appendChild(built)
         plansBox.hidden = false
         Array.prototype.forEach.call(document.querySelectorAll('[data-plans-text]'), function (n) {
           n.textContent = n.getAttribute('data-plans-text')
         })
       }
-      var addons = d.addons || []
+      var addons = Array.isArray(d.addons) ? d.addons : []
       var addBox = document.querySelector('[data-addons]')
       if (addBox && addons.length) {
-        addBox.appendChild(el('h3', null, L.addons))
-        addBox.appendChild(el('p', null, L.addonsLead))
+        var head = document.createDocumentFragment()
+        head.appendChild(el('h3', null, L.addons))
+        head.appendChild(el('p', null, L.addonsLead))
         var list = el('ul', 'addon-list')
         addons.forEach(function (x) {
           var li = el('li')
@@ -163,7 +175,8 @@
           li.appendChild(el('span', 'addon-price', x.price_month_chf == null ? L.onRequest : chf(x.price_month_chf) + ' ' + L.perMonth))
           list.appendChild(li)
         })
-        addBox.appendChild(list)
+        head.appendChild(list)
+        addBox.appendChild(head)
         addBox.hidden = false
       }
     })
@@ -172,7 +185,7 @@
   var pluginGrid = document.querySelector('[data-plugins]')
   if (pluginGrid) {
     getJSON('/api/v1/public/plugins', function (d) {
-      ;(d.plugins || []).forEach(function (p) {
+      ;(Array.isArray(d.plugins) ? d.plugins : []).forEach(function (p) {
         var card = pluginGrid.querySelector('[data-plugin="' + String(p.id).replace(/["\\]/g, '') + '"]')
         if (!card) {
           card = el('article', 'feat')
