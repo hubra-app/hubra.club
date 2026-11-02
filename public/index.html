@@ -4,45 +4,57 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hubra · Vereinssoftware für Schweizer Vereine</title>
-<meta name="description" content="Hubra ist die Vereinssoftware für Schweizer Vereine: Mitglieder, QR-Rechnungen, Anlässe, Abstimmungen und Gruppen an einem Ort. Wir betreiben sie für euch, Plugins schaltet jeder Verein selbst dazu.">
+<meta name="description" content="Hubra ist die Vereinssoftware für Schweizer Vereine: Mitglieder, QR-Rechnungen, Anlässe und Trainings, Abstimmungen und Gruppen an einem Ort. Gehostet in Europa, ohne Tracking.">
 <link rel="canonical" href="https://hubra.club/">
 <link rel="alternate" hreflang="de-CH" href="https://hubra.club/">
 <link rel="alternate" hreflang="en" href="https://hubra.club/en/">
 <link rel="alternate" hreflang="x-default" href="https://hubra.club/">
 <meta name="theme-color" content="#7441e0">
 <meta name="color-scheme" content="light dark">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="favicon.ico" sizes="32x32">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Hubra">
-<meta property="og:title" content="Hubra · Vereinssoftware, die einfach läuft">
-<meta property="og:description" content="Mitglieder, Finanzen, Anlässe und Abstimmungen an einem Ort. Wir betreiben Hubra, ihr legt los.">
+<meta property="og:title" content="Hubra · Vereinssoftware für Schweizer Vereine">
+<meta property="og:description" content="Hubra ist die Vereinssoftware für Schweizer Vereine: Mitglieder, QR-Rechnungen, Anlässe und Trainings, Abstimmungen und Gruppen an einem Ort. Gehostet in Europa, ohne Tracking.">
 <meta property="og:url" content="https://hubra.club/">
 <meta property="og:image" content="https://hubra.club/assets/og.png">
 <meta property="og:locale" content="de_CH">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preload" href="assets/fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/site.css">
+<link rel="preload" href="/assets/fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/theme.js"></script>
+<script src="/assets/site.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Zum Inhalt springen</a>
 
 <header class="top" id="top">
   <div class="wrap">
-    <a class="brand" href="./" aria-label="Hubra, Startseite">
+    <a class="brand" href="/" aria-label="Hubra, Startseite">
       <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="15" fill="#7441e0"/><path d="M21 14V50M21 35a11 11 0 0 1 22 0V50" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="45" r="4" fill="#fece2b"/></svg>
       <span class="wordmark">hubra</span>
     </a>
-    <nav class="nav" aria-label="Hauptnavigation">
-      <a href="#funktionen">Funktionen</a>
-      <a href="#so-gehts">So geht's</a>
-      <a href="#plugins">Plugins</a>
-      <a href="#faq">Fragen</a>
+    <nav class="nav" id="nav" aria-label="Hauptnavigation">
+      <a href="/#funktionen">Funktionen</a>
+      <a href="/#sicherheit">Sicherheit</a>
+      <a href="/#plugins">Plugins</a>
+      <a href="/#preise">Preise</a>
+      <a href="/#fragen">Fragen</a>
+      <span class="nav-extra">
+        <a href="https://app.hubra.club">Anmelden</a>
+        <a href="/en/" hreflang="en" lang="en">English</a>
+      </span>
     </nav>
-    <a class="lang" href="en/" hreflang="en" lang="en">EN</a>
-    <a class="signin" href="https://app.hubra.club">Anmelden</a>
-    <a class="btn btn-p btn-sm" href="#kontakt">Kontakt</a>
+    <div class="top-actions">
+      <button class="icon-btn theme-btn" type="button" aria-label="Farbschema wechseln" title="Farbschema wechseln" hidden><svg class="i-auto" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5v17a8.5 8.5 0 0 0 0-17z" fill="currentColor" stroke="none"/></svg><svg class="i-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg><svg class="i-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg></button>
+      <a class="lang" href="/en/" hreflang="en" lang="en" title="English">EN</a>
+      <a class="signin" href="https://app.hubra.club">Anmelden</a>
+      <a class="btn btn-p btn-sm" href="https://sso.hubra.club/start">Verein starten</a>
+      <button class="icon-btn menu-btn" type="button" aria-label="Menü" aria-expanded="false" aria-controls="nav" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
   </div>
 </header>
 
@@ -50,43 +62,65 @@
 
 <section class="hero">
   <div class="wrap">
-    <div>
-      <span class="eyebrow">Vereinssoftware aus der Schweiz</span>
-      <h1>Vereinssoftware, die <em>einfach läuft.</em></h1>
-      <p class="lede">Mitglieder, Beiträge, Anlässe, Abstimmungen und Gruppen an einem Ort. Wir betreiben Hubra für euch, mit Updates und Backups. Ihr braucht keinen Server, nur einen Browser.</p>
+    <div class="hero-copy">
+      <a class="pill" href="#mitglieder"><b>Neu</b> Trainings mit Anwesenheit, Passkeys und Push-Erinnerungen</a>
+      <h1>Euer Verein. <em>Alles an einem Ort.</em></h1>
+      <p class="lede">Mitglieder, Beiträge, Anlässe, Abstimmungen und Gruppen in einer App. Wir betreiben Hubra für euch, mit Updates und verschlüsselten Backups. Ihr braucht nur einen Browser.</p>
       <div class="cta">
-        <a class="btn btn-p" href="#kontakt">Verein anmelden</a>
-        <a class="btn btn-s" href="https://app.hubra.club">Zur Anmeldung</a>
+        <a class="btn btn-w" href="https://sso.hubra.club/start">Verein starten
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost-w" href="#rundgang">Rundgang ansehen</a>
       </div>
       <ul class="facts">
         <li>Swiss QR-Rechnung</li>
         <li>Gehostet in Europa</li>
-        <li>Plugins pro Verein</li>
+        <li>Kein Tracking, keine Werbung</li>
       </ul>
     </div>
 
-    <div class="mock" role="img" aria-label="Beispielansicht der Hubra-App mit einer Generalversammlung, Mitgliederzahlen und einer QR-Rechnung">
-      <div class="mock-bar">
-        <span class="brand"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="15" fill="#7441e0"/><path d="M21 14V50M21 35a11 11 0 0 1 22 0V50" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="45" r="4" fill="#fece2b"/></svg><span class="wordmark">hubra</span></span>
-        <span class="mock-club">FC Seeblick</span>
-      </div>
-      <div class="mock-body" aria-hidden="true">
-        <div class="mstats">
-          <div class="mstat"><b>186</b><span>Mitglieder</span></div>
-          <div class="mstat"><b>4</b><span>Anlässe im März</span></div>
-          <div class="mstat"><b>92%</b><span>Beiträge bezahlt</span></div>
+    <div class="hero-shot" role="img" aria-label="Die Übersicht eines Vereins in der Hubra-App: Mitgliederzahlen, nächste Anlässe und offene Rechnungen">
+      <div class="app" aria-hidden="true">
+        <div class="app-bar">
+          <span class="dots"><i></i><i></i><i></i></span>
+          <span class="app-url">app.hubra.club/fc-seeblick</span>
         </div>
-        <div class="mcard">
-          <div class="mrow"><span class="badge badge-g">Neu</span><span class="badge badge-v">Abstimmung</span></div>
-          <h3>Generalversammlung 2027</h3>
-          <span class="mmeta">Fr, 14. März · 19:30 · Clubhaus · 42 Zusagen</span>
-          <div class="mrow"><span class="mbtn">Zusagen</span><span class="mbtn s">Traktanden</span></div>
-        </div>
-        <div class="mcard qr">
-          <img src="assets/qr.svg" alt="" width="58" height="58">
-          <div>
-            <div class="mrow"><h3>Mitgliederbeitrag 2027</h3><span class="badge badge-ok">Bezahlt</span></div>
-            <span class="mono">CHF 120.00 · QR-Rechnung · eingelesen aus camt.054</span>
+        <div class="app-main">
+          <nav class="app-side">
+            <div class="club"><i>FS</i>FC Seeblick</div>
+            <span class="side-item on"><svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v9H4z"/></svg>Übersicht</span>
+            <span class="side-item"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.6a3.5 3.5 0 0 1 0 6.8M18.5 14a6.5 6.5 0 0 1 3 6"/></svg>Mitglieder</span>
+            <span class="side-item"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Anlässe<span class="n">3</span></span>
+            <span class="side-item"><svg viewBox="0 0 24 24"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg>Finanzen</span>
+            <span class="side-item"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7.5 12.5l3 3 6-7"/></svg>Abstimmungen</span>
+            <span class="side-label">Verein</span>
+            <span class="side-item"><svg viewBox="0 0 24 24"><circle cx="8" cy="9" r="5"/><circle cx="16" cy="15" r="5"/></svg>Gruppen</span>
+            <span class="side-item"><svg viewBox="0 0 24 24"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg>Inventar</span>
+          </nav>
+          <div class="app-content">
+            <div class="app-head">
+              <div><h3>Grüezi, Lea</h3><span class="sub">Montag, 1. März · Vorstand</span></div>
+              <span class="mbtn">+ Neu</span>
+            </div>
+            <div class="stats">
+              <div class="stat"><span>Mitglieder</span><b>186</b><small>+4 diesen Monat</small></div>
+              <div class="stat"><span>Beiträge bezahlt</span><b>92 %</b><div class="bar"><i style="width:92%"></i></div></div>
+              <div class="stat"><span>Anlässe im März</span><b>11</b><small>3 Trainings / Woche</small></div>
+              <div class="stat"><span>Kontostand</span><b class="num" style="font-size:20px">18 420.50</b><small>CHF</small></div>
+            </div>
+            <div class="cols">
+              <div class="card">
+                <h4>Nächste Anlässe</h4>
+                <div class="row"><span class="date"><small>Mär</small><b>3</b></span><span class="grow"><b>Training Junioren</b><span>Mi 18:00 · Sportplatz Au · 14 Zusagen</span></span><span class="badge b-v">Serie</span></div>
+                <div class="row"><span class="date"><small>Mär</small><b>12</b></span><span class="grow"><b>Generalversammlung 2027</b><span>Fr 19:30 · Clubhaus · 42 Zusagen</span></span><span class="badge b-g">Neu</span></div>
+                <div class="row"><span class="date"><small>Mär</small><b>20</b></span><span class="grow"><b>Arbeitstag Clubhaus</b><span>Sa 09:00 · 8 von 12 Helfern</span></span></div>
+              </div>
+              <div class="card">
+                <h4>Rechnungen</h4>
+                <div class="row"><span class="av" style="background:#7441e0">MB</span><span class="grow"><b>Marco Bernasconi</b><span class="num">CHF 120.00</span></span><span class="badge b-ok">Bezahlt</span></div>
+                <div class="row"><span class="av" style="background:#d97706">SG</span><span class="grow"><b>Sara Gerber</b><span class="num">CHF 60.00</span></span><span class="badge b-n">Offen</span></div>
+                <div class="row"><span class="av" style="background:#0e7490">NK</span><span class="grow"><b>Noah Keller</b><span class="num">CHF 120.00</span></span><span class="badge b-g">Mahnung</span></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -94,9 +128,109 @@
   </div>
 </section>
 
-<section class="proof" aria-label="Im Einsatz">
+<div class="proof">
   <div class="wrap">
-    <p><b>Im Einsatz beim VollBuild Makerspace.</b> Hubra ist für den Alltag eines echten Vereins entstanden und läuft dort jeden Tag. Jetzt öffnen wir es für weitere Vereine.</p>
+    <span><b>Im Einsatz beim VollBuild Makerspace</b>, jeden Tag.</span>
+    <span class="sep" aria-hidden="true"></span>
+    <span>Gebaut in der Schweiz, für Schweizer Vereine</span>
+    <span class="sep" aria-hidden="true"></span>
+    <span>Deutsch und Englisch, hell und dunkel</span>
+  </div>
+</div>
+
+<section id="rundgang">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Rundgang</span>
+      <h2>So sieht Vereinsarbeit mit Hubra aus.</h2>
+      <p>Der Vorstand arbeitet in derselben App wie die Mitglieder. Jede Person sieht, was sie braucht, und nicht mehr.</p>
+    </div>
+    <div class="tour">
+      <div class="tour-tabs" role="tablist" aria-label="Rundgang" aria-orientation="vertical">
+        <button class="tour-tab" type="button" role="tab" id="tab-mitglieder" aria-controls="panel-mitglieder" aria-selected="true">
+          <b><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.6a3.5 3.5 0 0 1 0 6.8M18.5 14a6.5 6.5 0 0 1 3 6"/></svg>Mitglieder</b>
+          <span>Aufnahmegesuche, Kategorien, Ämter und ein Verzeichnis, das jedes Mitglied selbst freigibt.</span>
+        </button>
+        <button class="tour-tab" type="button" role="tab" id="tab-finanzen" aria-controls="panel-finanzen" aria-selected="false">
+          <b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>Finanzen</b>
+          <span>Beiträge nach Plan, QR-Rechnungen, Mahnungen und Zahlungen direkt aus dem E-Banking.</span>
+        </button>
+        <button class="tour-tab" type="button" role="tab" id="tab-anlaesse" aria-controls="panel-anlaesse" aria-selected="false">
+          <b><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Anlässe und Trainings</b>
+          <span>Wiederkehrende Trainings, Anmeldungen, Gäste und Anwesenheit mit einem Tipp.</span>
+        </button>
+        <button class="tour-tab" type="button" role="tab" id="tab-abstimmungen" aria-controls="panel-abstimmungen" aria-selected="false">
+          <b><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7.5 12.5l3 3 6-7"/></svg>Abstimmungen</b>
+          <span>Online abstimmen, auch mit Stellvertretung, für alle oder nur eine Gruppe.</span>
+        </button>
+      </div>
+
+      <div class="tour-panels">
+        <div class="tour-panel" role="tabpanel" id="panel-mitglieder" aria-labelledby="tab-mitglieder">
+          <div class="app" aria-hidden="true">
+            <div class="app-bar"><span class="dots"><i></i><i></i><i></i></span><span class="app-url">app.hubra.club/fc-seeblick/members</span></div>
+            <div class="app-main"><div class="app-content">
+              <div class="app-head"><div><h3>Mitglieder</h3><span class="sub">186 aktiv · 3 Gesuche offen</span></div><span class="mbtn">Einladen</span></div>
+              <div class="card">
+                <div class="row"><span class="av" style="background:#7441e0">LM</span><span class="grow"><b>Lea Meier</b><span>Präsidentin · seit 2019</span></span><span class="badge b-v">Vorstand</span></div>
+                <div class="row"><span class="av" style="background:#1f9d57">JZ</span><span class="grow"><b>Jonas Zürcher</b><span>Aktiv · Junioren-Trainer</span></span><span class="badge b-n">Aktiv</span></div>
+                <div class="row"><span class="av" style="background:#d97706">AR</span><span class="grow"><b>Anna Rossi</b><span>Passiv · seit 2024</span></span><span class="badge b-n">Passiv</span></div>
+                <div class="row"><span class="av" style="background:#be185d">TB</span><span class="grow"><b>Tim Brunner</b><span>Aufnahmegesuch vom 28. Feb.</span></span><span class="badge b-g">Prüfen</span></div>
+                <div class="row"><span class="av" style="background:#0e7490">NK</span><span class="grow"><b>Noah Keller</b><span>Junior · seit 2025</span></span><span class="badge b-n">Junior</span></div>
+              </div>
+            </div></div>
+          </div>
+        </div>
+        <div class="tour-panel" role="tabpanel" id="panel-finanzen" aria-labelledby="tab-finanzen" hidden>
+          <div class="app" aria-hidden="true">
+            <div class="app-bar"><span class="dots"><i></i><i></i><i></i></span><span class="app-url">app.hubra.club/fc-seeblick/finance</span></div>
+            <div class="app-main"><div class="app-content">
+              <div class="app-head"><div><h3>Mitgliederbeitrag 2027</h3><span class="sub">Fällig am 31. März · Beitragsplan «Aktiv»</span></div><span class="mbtn s">Bankdatei einlesen</span></div>
+              <div class="stats">
+                <div class="stat"><span>Verschickt</span><b>186</b></div>
+                <div class="stat"><span>Bezahlt</span><b>171</b></div>
+                <div class="stat"><span>Offen</span><b>12</b></div>
+                <div class="stat"><span>Gemahnt</span><b>3</b></div>
+              </div>
+              <div class="card">
+                <div class="row"><img src="/assets/qr.svg" alt="" width="44" height="44" style="border-radius:6px"><span class="grow"><b>QR-Rechnung RE-2027-0142</b><span class="num">CHF 120.00 · QR-Referenz 21 00000 00003 13947 14300 09017</span></span><span class="badge b-ok">Bezahlt</span></div>
+                <div class="row"><span class="av" style="background:#1f9d57">↓</span><span class="grow"><b>camt.054 eingelesen</b><span>38 Zahlungen erkannt, 38 Rechnungen abgeglichen</span></span><span class="badge b-v">Bankimport</span></div>
+                <div class="row"><span class="av" style="background:#d97706">!</span><span class="grow"><b>Zahlungserinnerung</b><span>geht am 14. April automatisch an 12 Mitglieder</span></span><span class="badge b-g">Geplant</span></div>
+              </div>
+            </div></div>
+          </div>
+        </div>
+        <div class="tour-panel" role="tabpanel" id="panel-anlaesse" aria-labelledby="tab-anlaesse" hidden>
+          <div class="app" aria-hidden="true">
+            <div class="app-bar"><span class="dots"><i></i><i></i><i></i></span><span class="app-url">app.hubra.club/fc-seeblick/events</span></div>
+            <div class="app-main"><div class="app-content">
+              <div class="app-head"><div><h3>Training Junioren</h3><span class="sub">Jeden Mittwoch 18:00 · Sportplatz Au · Gruppe Junioren</span></div><span class="mbtn">Anwesenheit</span></div>
+              <div class="card">
+                <h4>Mi, 3. März · 14 von 16 da</h4>
+                <div class="row"><span class="av" style="background:#0e7490">NK</span><span class="grow"><b>Noah Keller</b></span><span class="badge b-ok">Anwesend</span></div>
+                <div class="row"><span class="av" style="background:#be185d">MS</span><span class="grow"><b>Mia Schmid</b></span><span class="badge b-ok">Anwesend</span></div>
+                <div class="row"><span class="av" style="background:#7441e0">LB</span><span class="grow"><b>Luca Bühler</b><span>abgemeldet: Schullager</span></span><span class="badge b-n">Entschuldigt</span></div>
+                <div class="row"><span class="av" style="background:#d97706">G</span><span class="grow"><b>Gast: Elias W.</b><span>Probetraining</span></span><span class="badge b-v">Gast</span></div>
+              </div>
+            </div></div>
+          </div>
+        </div>
+        <div class="tour-panel" role="tabpanel" id="panel-abstimmungen" aria-labelledby="tab-abstimmungen" hidden>
+          <div class="app" aria-hidden="true">
+            <div class="app-bar"><span class="dots"><i></i><i></i><i></i></span><span class="app-url">app.hubra.club/fc-seeblick/polls</span></div>
+            <div class="app-main"><div class="app-content">
+              <div class="app-head"><div><h3>Neue Clubhaus-Küche</h3><span class="sub">Nur Aktivmitglieder · offen bis 12. März</span></div><span class="badge b-v">118 Stimmen</span></div>
+              <div class="card">
+                <div class="row"><span class="grow"><b>Ja, Budget CHF 24 000</b><div class="bar" style="margin-top:6px"><i style="width:64%"></i></div></span><span class="num">64 %</span></div>
+                <div class="row"><span class="grow"><b>Ja, aber günstiger</b><div class="bar" style="margin-top:6px"><i style="width:27%"></i></div></span><span class="num">27 %</span></div>
+                <div class="row"><span class="grow"><b>Nein</b><div class="bar" style="margin-top:6px"><i style="width:9%"></i></div></span><span class="num">9 %</span></div>
+              </div>
+              <div class="card"><div class="row"><span class="av" style="background:#1f9d57">✓</span><span class="grow"><b>Deine Stimme ist gezählt</b><span>Du stimmst auch für Anna Rossi (Vollmacht)</span></span></div></div>
+            </div></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -105,59 +239,200 @@
     <div class="sec-head">
       <span class="eyebrow">Funktionen</span>
       <h2>Alles, was der Vorstand braucht. Und nicht mehr.</h2>
-      <p>Hubra deckt den Vereinsalltag ab, von der Aufnahme bis zur Generalversammlung. Was ihr nicht braucht, schaltet ihr einfach aus.</p>
+      <p>Vom Aufnahmegesuch bis zur Generalversammlung. Was ihr nicht braucht, schaltet ihr pro Verein aus, und die Daten bleiben erhalten.</p>
     </div>
     <div class="grid">
       <article class="feat">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.5 14a6.5 6.5 0 0 1 3 6"/></svg></div>
+        <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.6a3.5 3.5 0 0 1 0 6.8M18.5 14a6.5 6.5 0 0 1 3 6"/></svg></div>
         <h3>Mitglieder</h3>
-        <p>Verzeichnis, Profile und Aufnahmegesuche, die der Vorstand online prüft. Mitgliederkategorien mit eigenen Beiträgen und Zahlungsplänen.</p>
+        <p>Verzeichnis, Profile und Aufnahmegesuche, die der Vorstand online prüft. Mitgliederkategorien, Ämter und eine Detailseite pro Mitglied.</p>
       </article>
       <article class="feat">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div>
+        <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div>
+        <h3>Beiträge und Rechnungen</h3>
+        <p>Beitragspläne nach Eintritt oder Stichtag, anteilige erste Beiträge, Swiss QR-Rechnungen und automatische Mahnungen.</p>
+      </article>
+      <article class="feat">
+        <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M6 16V9M11 16V5M16 16v-6M21 16v-3"/></svg></div>
         <h3>Finanzen</h3>
-        <p>Rechnungen mit Swiss QR-Rechnung, automatische Mahnungen und Buchungen. Zahlungen liest ihr per camt.054-Datei aus dem E-Banking ein.</p>
+        <p>Buchungen mit Kategorien, wiederkehrende Einnahmen und Ausgaben, ein Monatsauszug per Mail und ein Budget pro Jahr.</p>
       </article>
       <article class="feat">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><circle cx="12" cy="15" r="1.5" fill="currentColor"/></svg></div>
-        <h3>Anlässe</h3>
-        <p>Trainings, Workshops und Feste mit Anmeldung und Teilnehmerlisten. Jedes Mitglied abonniert seinen persönlichen Kalender-Feed.</p>
+        <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><circle cx="12" cy="15" r="1.5" fill="currentColor"/></svg></div>
+        <h3>Anlässe und Trainings</h3>
+        <p>Einzelne Anlässe oder wöchentliche Serien, mit Anmeldung, Gästen, Freigabe und Anwesenheitsliste. Jedes Mitglied abonniert seinen Kalender.</p>
       </article>
       <article class="feat">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7.5 12.5l3 3 6-7"/></svg></div>
+        <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7.5 12.5l3 3 6-7"/></svg></div>
         <h3>Abstimmungen</h3>
-        <p>Umfragen und Abstimmungen für alle oder nur für bestimmte Gruppen, auch mit Stellvertretung, wenn jemand nicht dabei sein kann.</p>
+        <p>Umfragen und Abstimmungen für alle oder eine Gruppe, mit Stellvertretung für alle, die nicht dabei sein können.</p>
       </article>
       <article class="feat">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="9" r="5"/><circle cx="16" cy="15" r="5"/></svg></div>
-        <h3>Gruppen und Ämter</h3>
-        <p>Teams, Kommissionen und Interessengruppen, denen Mitglieder selbst beitreten. Ämter, Rollen und Rechte zeigen, wer wofür zuständig ist.</p>
+        <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="9" r="5"/><circle cx="16" cy="15" r="5"/></svg></div>
+        <h3>Gruppen</h3>
+        <p>Teams, Kommissionen und Interessengruppen. Offen zum Beitreten, sichtbar auf Anfrage oder privat.</p>
       </article>
       <article class="feat">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5L12 13l8.5-6.5"/></svg></div>
-        <h3>Eigene Vereins-Mail</h3>
+        <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M15 8l2 2"/></svg></div>
+        <h3>Rollen und Rechte</h3>
+        <p>Wer darf was? Rollen pro Amt oder Gruppe, bis hinunter zu einzelnen Geräten, Anlässen oder Postfächern.</p>
+      </article>
+      <article class="feat">
+        <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></div>
+        <h3>Beiträge und Mitteilungen</h3>
+        <p>Ankündigungen und Community-Beiträge. Erinnerungen kommen per Mail, als Push aufs Handy oder in der App, wie jedes Mitglied es will.</p>
+      </article>
+      <article class="feat">
+        <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5L12 13l8.5-6.5"/></svg></div>
+        <h3>Vereins-Mail</h3>
         <p>Postfächer und Aliase wie praesident@ oder kasse@ für euren Verein. Wechselt das Amt, wechselt das Postfach mit.</p>
       </article>
       <article class="feat">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11l14-6v14L4 13z"/><path d="M8 13.5V19h3v-4.3M18 9.5a2.5 2.5 0 0 1 0 5"/></svg></div>
-        <h3>Beiträge</h3>
-        <p>Ankündigungen vom Vorstand und Beiträge aus der Community, für alle oder nur für eine Gruppe sichtbar.</p>
+        <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg></div>
+        <h3>Inventar und Ausleihe</h3>
+        <p>Werkzeug, Geräte und Material mit Ausleihe, Rückgabefristen, Einführungen und Türcodes.</p>
       </article>
       <article class="feat">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg></div>
-        <h3>Inventar</h3>
-        <p>Werkzeug, Geräte und Material mit Ausleihe, Rückgabefristen und Einführungen. Optional mit Schlüsseln, Badges und Depots.</p>
+        <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18M3 12h18"/></svg></div>
+        <h3>Euer Auftritt</h3>
+        <p>Vereinsfarben, Logo, eigene Mail-Domain und Mails im Vereinslook. Hell oder dunkel, auf Deutsch oder Englisch.</p>
       </article>
       <article class="feat">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <h3>Sicher im Alltag</h3>
-        <p>Ein Login für alle Bereiche, verschlüsselte Backups, verschlüsselte Türcodes und ein Protokoll, das zeigt, wer was geändert hat.</p>
+        <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M4 12h16M4 17h7"/><circle cx="18" cy="7" r="2"/><circle cx="15" cy="17" r="2"/></svg></div>
+        <h3>Module nach Bedarf</h3>
+        <p>Jeder Verein schaltet ein, was er braucht. Die Seitenleiste passt jede Person für sich an.</p>
       </article>
     </div>
   </div>
 </section>
 
-<section id="so-gehts">
+<section id="mitglieder">
+  <div class="wrap split">
+    <div>
+      <div class="sec-head">
+        <span class="eyebrow">Für Mitglieder</span>
+        <h2>Gemacht für alle im Verein, nicht nur den Vorstand.</h2>
+        <p>Mitglieder melden sich an, zahlen, stimmen ab und sehen ihre Trainings, auf dem Handy wie am Computer.</p>
+      </div>
+      <ul class="points">
+        <li><div><b>Ein Konto für mehrere Vereine</b><span>Wer im Turnverein und im Makerspace ist, meldet sich einmal an und wechselt mit einem Tipp.</span></div></li>
+        <li><div><b>Erinnerungen, wie man sie will</b><span>Per Mail, Push-Nachricht oder Discord. Jedes Mitglied wählt selbst, was es bekommt.</span></div></li>
+        <li><div><b>Anmelden ohne Passwort</b><span>Mit Passkey, Fingerabdruck oder Gesicht. Wer mag, schützt das Konto zusätzlich mit einem zweiten Faktor.</span></div></li>
+        <li><div><b>Eigener Kalender</b><span>Alle Anlässe und Trainings im eigenen Kalender, auf dem Handy und am Computer.</span></div></li>
+      </ul>
+    </div>
+    <div class="phone" role="img" aria-label="Hubra auf dem Handy: eine Push-Erinnerung an ein Training und der Wechsel zwischen zwei Vereinen">
+      <div class="phone-screen" aria-hidden="true">
+        <div class="phone-top"><i></i></div>
+        <div class="phone-bar"><span class="brand"><svg viewBox="0 0 64 64" style="width:22px;height:22px"><rect width="64" height="64" rx="15" fill="#7441e0"/><path d="M21 14V50M21 35a11 11 0 0 1 22 0V50" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="45" r="4" fill="#fece2b"/></svg><span class="wordmark" style="font-size:18px">hubra</span></span><span class="av" style="background:#7441e0;width:26px;height:26px;font-size:11px">JZ</span></div>
+        <div class="phone-body">
+          <div class="push"><img src="/assets/favicon.svg" alt=""><div><b>Training Junioren in 2 Stunden</b><p>Mi 18:00 · Sportplatz Au. Bist du dabei?</p></div></div>
+          <div class="card">
+            <h4>Meine Woche</h4>
+            <div class="row"><span class="date"><small>Mi</small><b>3</b></span><span class="grow"><b>Training Junioren</b><span>FC Seeblick</span></span><span class="badge b-ok">Dabei</span></div>
+            <div class="row"><span class="date"><small>Do</small><b>4</b></span><span class="grow"><b>Lasercutter-Einführung</b><span>VollBuild Makerspace</span></span><span class="badge b-ok">Dabei</span></div>
+          </div>
+          <div class="switcher">
+            <div class="row"><span class="av" style="background:#1f9d57;border-radius:8px">FS</span><span class="grow"><b>FC Seeblick</b><span>Trainer</span></span><span class="badge b-v">Aktiv</span></div>
+            <div class="row"><span class="av" style="background:#d97706;border-radius:8px">VB</span><span class="grow"><b>VollBuild Makerspace</b><span>Mitglied</span></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="secure" id="sicherheit">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Sicherheit und Datenschutz</span>
+      <h2>Eure Mitgliederdaten sind bei uns gut aufgehoben.</h2>
+      <p>Vereine verwalten Adressen, Zahlungen und manchmal Daten von Kindern. Deshalb ist Sicherheit bei Hubra kein Zusatz, sondern eingebaut.</p>
+    </div>
+    <div class="grid">
+      <article class="feat">
+        <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
+        <h3>Gehostet in Europa</h3>
+        <p>Server und Backups liegen in Rechenzentren in Europa. Für Vereine gelten das Schweizer DSG und die DSGVO.</p>
+      </article>
+      <article class="feat">
+        <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+        <h3>Ein Schlüssel pro Verein</h3>
+        <p>Jeder Verein hat einen eigenen Bereich und eigene Schlüssel für vertrauliche Daten wie Türcodes und Zugangsdaten.</p>
+      </article>
+      <article class="feat">
+        <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Verschlüsselte Backups</h3>
+        <p>Tägliche Backups, verschlüsselt, bevor sie den Server verlassen. Ohne den privaten Schlüssel kann niemand sie lesen, auch nicht der Speicheranbieter.</p>
+      </article>
+      <article class="feat">
+        <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M15 8l2 2"/></svg></div>
+        <h3>Passkeys und zwei Faktoren</h3>
+        <p>Passkeys, Einmalcodes per App und eine Mail bei jeder Anmeldung von einem neuen Gerät. Vereine können 2FA für den Vorstand verlangen.</p>
+      </article>
+      <article class="feat">
+        <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4h9a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9"/><path d="M4 4l5 5M9 4v5H4"/><path d="M9 13h7M9 17h5"/></svg></div>
+        <h3>Nachvollziehbar</h3>
+        <p>Ein Protokoll zeigt dem Vorstand, wer wann was geändert hat. Greift unser Support zu, ist das begründet, zeitlich begrenzt und im Verein als Banner sichtbar.</p>
+      </article>
+      <article class="feat">
+        <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.7 5.7l12.6 12.6"/></svg></div>
+        <h3>Kein Tracking, keine Werbung</h3>
+        <p>Keine Analysedienste, keine Werbe-Cookies, kein Verkauf von Daten. Wir verdienen mit dem Betrieb, nicht mit euren Daten.</p>
+      </article>
+    </div>
+    <div class="links">
+      <a class="btn btn-w" href="/datenschutz/">Datenschutzerklärung</a>
+      <a class="btn btn-ghost-w" href="/auftragsverarbeitung/">Auftragsverarbeitung für Vereine</a>
+    </div>
+  </div>
+</section>
+
+<section id="plugins">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Plugins</span>
+      <h2>Jeder Verein stellt sich sein Hubra zusammen.</h2>
+      <p>Weitere Funktionen installiert euer Vorstand als Plugin, nur für euren Verein. Jedes Plugin ist signiert und wird von uns geprüft.</p>
+    </div>
+    <div class="grid">
+      <article class="feat">
+        <span class="tag">Plugin</span>
+        <h3>Bankimport</h3>
+        <p>Kontoauszüge als camt.053, camt.054, MT940 oder CSV einlesen. Zahlungen werden Rechnungen zugeordnet, alles andere nach euren Regeln verbucht.</p>
+      </article>
+      <article class="feat">
+        <span class="tag">Plugin</span>
+        <h3>Budgets</h3>
+        <p>Ein Jahresbudget pro Kategorie, laufend verglichen mit den Buchungen. Genehmigen, sperren und ins nächste Jahr übernehmen.</p>
+      </article>
+      <article class="feat">
+        <span class="tag">Plugin</span>
+        <h3>Discord</h3>
+        <p>Der Hubra-Bot auf eurem Server: Ankündigungen, Rollen, Gruppenkanäle, Discord-Events, Abstimmungen per Knopf und Erinnerungen per Direktnachricht.</p>
+      </article>
+      <article class="feat">
+        <span class="tag">Plugin</span>
+        <h3>Gemeinsames Postfach</h3>
+        <p>Vereinspostfächer bei Infomaniak, Hostpoint oder Gmail direkt in Hubra lesen, jedes Postfach sichtbar für eine Gruppe.</p>
+      </article>
+      <article class="feat">
+        <span class="tag">Plugin</span>
+        <h3>Schlüssel</h3>
+        <p>Schlüssel, Badges und Karten: wer welchen hat, mit Übergabeprotokoll. Mitglieder sehen ihre Schlüssel im Konto.</p>
+      </article>
+      <article class="feat">
+        <span class="tag">Plugin</span>
+        <h3>Anleitungen</h3>
+        <p>Eine Anleitung pro Gerät oder Werkzeug, als Text oder Link zu Handbuch und Video, direkt beim Inventar.</p>
+      </article>
+    </div>
+    <p style="margin-top:28px"><a class="btn btn-s" href="https://plugins.hubra.club">Alle Plugins im Marktplatz
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+  </div>
+</section>
+
+<section class="band" id="so-gehts">
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">So geht's</span>
@@ -166,173 +441,164 @@
     </div>
     <ol class="steps">
       <li>
-        <h3>Verein anmelden</h3>
-        <p>Schreibt uns kurz, wer ihr seid. Wir richten euren Vereinsbereich auf Hubra ein.</p>
+        <h3>Verein beantragen</h3>
+        <p>Erstellt ein Hubra-Konto und beantragt euren Verein. Wir prüfen die Anfrage und schalten euren Bereich frei.</p>
       </li>
       <li>
         <h3>Einrichten</h3>
-        <p>Wählt die Module, die ihr braucht, legt Mitgliederkategorien und Beiträge fest und übernehmt eure bestehende Mitgliederliste.</p>
+        <p>Wählt die Module, legt Kategorien und Beiträge fest und übernehmt eure Mitgliederliste. Wir helfen beim Import.</p>
       </li>
       <li>
         <h3>Mitglieder einladen</h3>
-        <p>Eure Mitglieder melden sich mit einem Hubra-Konto an. Wer in mehreren Vereinen ist, braucht nur eines.</p>
+        <p>Mit einem Einladungslink treten eure Mitglieder bei. Wer schon ein Hubra-Konto hat, braucht kein zweites.</p>
       </li>
     </ol>
   </div>
 </section>
 
-<section class="band" id="plugins">
+<section id="preise">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Module und Plugins</span>
-      <h2>Jeder Verein stellt sich sein Hubra zusammen.</h2>
-      <p>Die Grundfunktionen sind eingebaut und lassen sich pro Verein ein- und ausschalten. Weitere Funktionen installiert euer Vorstand als Plugin, nur für euren Verein. Schaltet ihr etwas wieder aus, bleiben die Daten erhalten.</p>
+    <div class="sec-head center">
+      <span class="eyebrow">Preise</span>
+      <h2>Ein fairer Preis für jeden Verein.</h2>
+      <p>Hubra ist in der Pilotphase. Der Preis richtet sich nach der Grösse eures Vereins und danach, was ihr braucht.</p>
     </div>
-    <div class="grid">
-      <article class="feat plugin">
-        <span class="tag">Plugin</span>
-        <h3>Budgets</h3>
-        <p>Jahresbudgets pro Kategorie, laufend verglichen mit den tatsächlichen Buchungen.</p>
-      </article>
-      <article class="feat plugin">
-        <span class="tag">Plugin</span>
-        <h3>Bankimport</h3>
-        <p>camt.054-Dateien aus dem E-Banking einlesen und QR-Zahlungen automatisch den Rechnungen zuordnen.</p>
-      </article>
-      <article class="feat plugin">
-        <span class="tag">Plugin</span>
-        <h3>Schlüssel</h3>
-        <p>Schlüssel und Badges, wer sie hat, Übergaben und Depots.</p>
-      </article>
-      <article class="feat plugin">
-        <span class="tag">Plugin</span>
-        <h3>Anleitungen</h3>
-        <p>Bedienungsanleitungen direkt bei den Geräten und Werkzeugen im Inventar.</p>
-      </article>
-      <article class="feat plugin">
-        <span class="tag">Plugin</span>
-        <h3>Discord</h3>
-        <p>Anlässe, Beiträge und Abstimmungen automatisch im Discord eures Vereins ankündigen.</p>
-      </article>
-      <article class="feat plugin more">
-        <span class="tag">Bald</span>
-        <h3>Weitere Plugins</h3>
-        <p>Wir bauen den Marktplatz laufend aus. Einige Plugins können künftig kostenpflichtig sein.</p>
-      </article>
-    </div>
-    <p class="chips-label">Eingebaut und pro Verein schaltbar:</p>
-    <div class="chips">
-      <span class="chip">Mitglieder</span>
-      <span class="chip">Finanzen</span>
-      <span class="chip">Anlässe</span>
-      <span class="chip">Abstimmungen</span>
-      <span class="chip">Gruppen</span>
-      <span class="chip">Beiträge</span>
-      <span class="chip">Ämter</span>
-      <span class="chip">Rollen und Rechte</span>
-      <span class="chip">Mail</span>
-      <span class="chip">Inventar</span>
-      <span class="chip">Türcodes</span>
-      <span class="chip">Schnittstellen</span>
-    </div>
-  </div>
-</section>
-
-<section id="plattform">
-  <div class="wrap split">
-    <div>
-      <div class="sec-head">
-        <span class="eyebrow">Eine Plattform, viele Vereine</span>
-        <h2>Euer Bereich, eure Daten.</h2>
-        <p>Auf Hubra hat jeder Verein seinen eigenen Bereich, sauber getrennt von allen anderen. Ihr entscheidet, wer was sieht.</p>
+    <div class="price">
+      <div>
+        <span class="tag new">Pilotphase</span>
+        <h3>Hubra für euren Verein</h3>
+        <p class="big">Auf Anfrage <small>nach Vereinsgrösse</small></p>
+        <p>Schreibt uns, wie viele Mitglieder ihr habt und was ihr braucht. Ihr bekommt ein Angebot, ohne Verpflichtung. Einige Plugins können künftig einzeln kostenpflichtig sein.</p>
+        <div class="cta" style="justify-content:flex-start;margin-top:8px">
+          <a class="btn btn-p" href="https://sso.hubra.club/start">Verein starten</a>
+          <a class="btn btn-s" href="mailto:hi@hubra.club?subject=Angebot%20f%C3%BCr%20unseren%20Verein">Angebot anfragen</a>
+        </div>
       </div>
-      <ul class="points">
-        <li><div><b>Gehostet in Europa</b><span>Hubra läuft auf unseren Servern in Europa, mit verschlüsselten Backups.</span></div></li>
-        <li><div><b>Kein Tracking, keine Werbung</b><span>Keine Analysedienste und keine Weitergabe an Dritte. Was im Verein passiert, bleibt im Verein.</span></div></li>
-        <li><div><b>Ein Konto für mehrere Vereine</b><span>Wer im Turnverein und im Makerspace ist, meldet sich einmal an und wechselt zwischen den Vereinen.</span></div></li>
-      </ul>
-    </div>
-    <div class="mode selfhost">
-      <span class="eyebrow">Selbst betreiben</span>
-      <h3>Lieber auf dem eigenen Server?</h3>
-      <p>Hubra lässt sich auch selbst betreiben, mit Docker Compose oder Kubernetes, für einen einzelnen Verein oder einen ganzen Verband. Sprecht uns an, wenn das für euch besser passt.</p>
-      <p><a href="mailto:hi@hubra.club?subject=Hubra%20selbst%20betreiben">Selbst betreiben anfragen</a></p>
+      <div>
+        <h3 style="font-size:1.1rem">Immer dabei</h3>
+        <ul class="checks">
+          <li>Betrieb, Updates und Sicherheits-Updates</li>
+          <li>Tägliche verschlüsselte Backups</li>
+          <li>Alle eingebauten Module</li>
+          <li>QR-Rechnungen und Mails im Vereinslook</li>
+          <li>Hilfe beim Umzug eurer Mitgliederliste</li>
+          <li>Support per Mail, auf Deutsch und Englisch</li>
+          <li>Mitgliederliste jederzeit als CSV exportierbar</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="faq">
+<section class="band" id="fragen">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head center">
       <span class="eyebrow">Fragen</span>
       <h2>Häufige Fragen</h2>
     </div>
     <div class="faq">
       <details>
         <summary>Für welche Vereine ist Hubra gedacht?</summary>
-        <p>Für Vereine, die mehr als eine Excel-Liste brauchen: Sportvereine, Makerspaces, Kultur- und Quartiervereine. Hubra ist mit dem VollBuild Makerspace entstanden und ist dort täglich im Einsatz.</p>
+        <p>Für Vereine, die mehr als eine Excel-Liste brauchen: Sportvereine, Makerspaces, Kultur- und Quartiervereine. Hubra ist mit dem VollBuild Makerspace entstanden und dort täglich im Einsatz.</p>
       </details>
       <details>
         <summary>Brauchen wir einen eigenen Server oder eine Informatikerin?</summary>
-        <p>Nein. Wir betreiben Hubra, inklusive Updates und Backups. Euer Vorstand und eure Mitglieder brauchen nur einen Browser, auf dem Computer oder dem Handy.</p>
+        <p>Nein. Wir betreiben Hubra, mit Updates und Backups. Euer Vorstand und eure Mitglieder brauchen nur einen Browser, auf dem Computer oder dem Handy.</p>
       </details>
       <details>
-        <summary>Wo liegen unsere Daten?</summary>
-        <p>Auf unseren Servern in Europa, getrennt von den Daten anderer Vereine. Hubra verwendet keine Analysedienste und gibt keine Daten an Dritte weiter.</p>
+        <summary>Wo liegen unsere Daten, und wer sieht sie?</summary>
+        <p>Auf Servern in Europa, getrennt von den Daten anderer Vereine. Ihr bestimmt, wer im Verein was sieht. Wir bearbeiten eure Daten nur in eurem Auftrag, wie in der <a href="/auftragsverarbeitung/">Vereinbarung zur Auftragsverarbeitung</a> beschrieben, und listen alle Dienstleister in der <a href="/datenschutz/">Datenschutzerklärung</a>.</p>
       </details>
       <details>
         <summary>Was kostet Hubra?</summary>
-        <p>Der Preis richtet sich nach der Grösse eures Vereins und danach, was ihr mit Hubra machen wollt. Schreibt uns kurz, wie viele Mitglieder ihr habt und was ihr braucht, dann machen wir euch ein Angebot. Einige Plugins können künftig kostenpflichtig sein.</p>
+        <p>Hubra ist in der Pilotphase, und der Preis richtet sich nach der Grösse eures Vereins und danach, was ihr braucht. Schreibt uns an <a href="mailto:hi@hubra.club">hi@hubra.club</a>, dann machen wir euch ein Angebot.</p>
       </details>
       <details>
         <summary>Können wir unsere bestehenden Mitglieder übernehmen?</summary>
-        <p>Ja. Meldet euch mit eurer heutigen Liste, und wir helfen euch beim Import.</p>
+        <p>Ja. Meldet euch mit eurer heutigen Liste, und wir helfen euch beim Import. Eure Mitglieder bekommen danach einen Einladungslink.</p>
+      </details>
+      <details>
+        <summary>Was passiert mit unseren Daten, wenn wir aufhören?</summary>
+        <p>Ihr könnt eure Mitgliederliste vorher exportieren, und wir helfen beim Export weiterer Daten. Danach löschen wir euren Vereinsbereich. Aus den Backups verschwinden die Daten spätestens nach sechs Monaten. Die Einzelheiten stehen in der <a href="/datenschutz/#loeschung">Datenschutzerklärung</a>.</p>
       </details>
       <details>
         <summary>Können wir Hubra auch selbst betreiben?</summary>
-        <p>Ja, mit Docker Compose oder Kubernetes. Das lohnt sich vor allem für Verbände oder Vereine mit eigener Informatik. Schreibt uns, dann schauen wir es gemeinsam an.</p>
+        <p>Ja, mit Docker Compose oder Kubernetes. Das lohnt sich vor allem für Verbände oder Vereine mit eigener Informatik. <a href="mailto:hi@hubra.club?subject=Hubra%20selbst%20betreiben">Schreibt uns</a>, dann schauen wir es gemeinsam an.</p>
       </details>
     </div>
   </div>
 </section>
 
-<section id="kontakt" style="padding-top:0">
+<section class="cta-band" id="kontakt" style="padding-top:96px">
   <div class="wrap">
-    <div class="contact">
+    <div class="cta-card">
       <div>
         <h2>Bereit für euer Clubhaus?</h2>
-        <p>Erzählt uns kurz von eurem Verein. Wir richten euren Vereinsbereich ein und helfen beim Start.</p>
+        <p>Beantragt euren Verein in zwei Minuten, oder erzählt uns zuerst, was ihr braucht. Wir helfen beim Start.</p>
       </div>
-      <div><a class="btn" href="mailto:hi@hubra.club?subject=Hubra%20f%C3%BCr%20unseren%20Verein">hi@hubra.club</a></div>
-      <svg class="door" viewBox="0 0 64 64" aria-hidden="true"><path d="M21 14V50M21 35a11 11 0 0 1 22 0V50" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="45" r="4" fill="#fece2b"/></svg>
+      <div class="cta">
+        <a class="btn btn-w" href="https://sso.hubra.club/start">Verein starten</a>
+        <a class="btn btn-ghost-w" href="mailto:hi@hubra.club?subject=Hubra%20f%C3%BCr%20unseren%20Verein">hi@hubra.club</a>
+      </div>
     </div>
   </div>
 </section>
 
 </main>
 
-<footer>
+<footer class="foot">
   <div class="wrap">
-    <a class="brand" href="./" aria-label="Hubra, Startseite">
-      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="15" fill="#7441e0"/><path d="M21 14V50M21 35a11 11 0 0 1 22 0V50" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="45" r="4" fill="#fece2b"/></svg>
-      <span class="wordmark">hubra</span>
-    </a>
-    <nav aria-label="Rechtliches">
-      <a href="https://app.hubra.club">Anmelden</a>
-      <a href="impressum/">Impressum</a>
-      <a href="datenschutz/">Datenschutz</a>
-      <a href="en/" hreflang="en" lang="en">English</a>
-    </nav>
-    <span>© 2026 Hubra</span>
+    <div class="foot-brand">
+      <a class="brand" href="/" aria-label="Hubra, Startseite">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="15" fill="#7441e0"/><path d="M21 14V50M21 35a11 11 0 0 1 22 0V50" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="45" r="4" fill="#fece2b"/></svg>
+        <span class="wordmark">hubra</span>
+      </a>
+      <p>Vereinssoftware aus der Schweiz. Gehostet in Europa.</p>
+    </div>
+    <div class="foot-cols">
+      <div>
+        <h2>Produkt</h2>
+        <ul>
+          <li><a href="/#funktionen">Funktionen</a></li>
+          <li><a href="/#plugins">Plugins</a></li>
+          <li><a href="https://plugins.hubra.club">Plugin-Marktplatz</a></li>
+          <li><a href="/#preise">Preise</a></li>
+          <li><a href="/#fragen">Häufige Fragen</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Konto</h2>
+        <ul>
+          <li><a href="https://app.hubra.club">Anmelden</a></li>
+          <li><a href="https://sso.hubra.club/signup">Konto erstellen</a></li>
+          <li><a href="https://sso.hubra.club/start">Verein starten</a></li>
+          <li><a href="https://sso.hubra.club/account">Mein Konto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Rechtliches</h2>
+        <ul>
+          <li><a href="/impressum/">Impressum</a></li>
+          <li><a href="/datenschutz/">Datenschutz</a></li>
+          <li><a href="/nutzungsbedingungen/">Nutzungsbedingungen</a></li>
+          <li><a href="/auftragsverarbeitung/">Auftragsverarbeitung</a></li>
+          <li><a href="/cookies/">Cookies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Kontakt</h2>
+        <ul>
+          <li><a href="mailto:hi@hubra.club">hi@hubra.club</a></li>
+          <li><a href="https://github.com/hubra-app">GitHub</a></li>
+          <li><a href="/.well-known/security.txt">Sicherheitslücke melden</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Hubra</span>
+      <a href="/en/" hreflang="en" lang="en">English</a>
+    </div>
   </div>
 </footer>
-
-<script>
-  // Show the header's bottom line once the page has scrolled.
-  const header = document.getElementById("top");
-  const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 8);
-  addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
-</script>
 </body>
 </html>

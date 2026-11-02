@@ -1,0 +1,61 @@
+<!--
+path: /en/cookies/
+lang: en
+alt: /cookies/
+title: Cookies and local storage
+description: Which cookies and local storage hubra.club and the Hubra app use. No tracking or advertising cookies.
+index: no
+-->
+<main id="main">
+<div class="doc-hero">
+  <div class="wrap">
+    <p class="crumbs"><a href="/en/">Hubra</a> › Legal</p>
+    <h1>Cookies and local storage</h1>
+    <p>Hubra only uses cookies needed for sign-in, security and your settings. No tracking, analytics or advertising cookies. That's why there is no cookie banner.</p>
+  </div>
+</div>
+
+<div class="doc">
+  <div class="wrap">
+  <!-- toc -->
+  <article class="prose">
+    <!-- draft -->
+
+    <h2 id="website">On this website</h2>
+    <p>hubra.club sets no cookie by itself. Only when you switch the colour scheme at the top does the site store your choice:</p>
+    <table>
+      <thead><tr><th>Name</th><th>Purpose</th><th>Duration</th></tr></thead>
+      <tbody>
+        <tr><td><code>hubra_theme</code></td><td>Light, dark or automatic. Applies to every Hubra page under hubra.club so the website and the app match.</td><td>1 year</td></tr>
+        <tr><td><code>hubra_theme</code> (local storage)</td><td>The same choice as a fallback if the browser refuses the cookie</td><td>until you delete it</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="app">In the Hubra app</h2>
+    <p>The app at app., sso. and manage.hubra.club needs these cookies. Without them you can't sign in.</p>
+    <table>
+      <thead><tr><th>Name</th><th>Purpose</th><th>Duration</th></tr></thead>
+      <tbody>
+        <tr><td><code>access_token_cookie</code></td><td>Being signed in (short-lived pass)</td><td>15 minutes</td></tr>
+        <tr><td><code>refresh_token_cookie</code></td><td>Staying signed in</td><td>1 day, 30 days with "Keep me signed in"</td></tr>
+        <tr><td><code>csrf_access_token</code>, <code>csrf_refresh_token</code></td><td>Protection against forged requests (CSRF)</td><td>same as the sign-in</td></tr>
+        <tr><td><code>account_token</code>, <code>csrf_account_token</code></td><td>Sign-in on the account page (sso.hubra.club)</td><td>30 days</td></tr>
+        <tr><td><code>hubra_device</code></td><td>Recognises your browser so we can mail you when you sign in from a new device</td><td>400 days</td></tr>
+        <tr><td><code>remembered_email</code></td><td>Fills in your email address at the next sign-in</td><td>30 days</td></tr>
+        <tr><td><code>hubra_theme</code></td><td>Your colour scheme</td><td>1 year</td></tr>
+        <tr><td><code>hubra_link_account</code></td><td>Security check when linking a Discord account</td><td>10 minutes</td></tr>
+      </tbody>
+    </table>
+    <p>The app also keeps a few settings in your browser's local storage, such as language, colour scheme, sidebar order and favourites, and your club's logo for a quick start. This data doesn't leave your browser.</p>
+
+    <h2 id="legal-basis">Legal basis</h2>
+    <p>These cookies are technically necessary to provide the feature you asked for (Art. 6(1)(b) and (f) GDPR, § 25(2) TDDDG, Art. 45c Swiss Telecommunications Act). No consent is required.</p>
+
+    <h2 id="delete">Deleting cookies</h2>
+    <p>You can delete cookies and local storage in your browser at any time. You are then signed out and Hubra shows its default settings again.</p>
+    <p>More on how we process data is in the <a href="/en/privacy/">privacy policy</a>.</p>
+    <p class="meta">Last updated: draft of 2 November 2026</p>
+  </article>
+  </div>
+</div>
+</main>
