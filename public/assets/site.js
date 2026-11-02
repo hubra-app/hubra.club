@@ -70,6 +70,149 @@
   })
   if (tabs.length) select(tabs[0], false)
 
+  // Plans, add-ons and plugin prices from the public Hubra API. Only what
+  // is marked public in manage shows up; if the API is down or nothing is
+  // public yet, the static text on the page stays as it is.
+  var API = window.HUBRA_API || 'https://api.hubra.club'
+  var en = (root.getAttribute('lang') || 'de').slice(0, 2) === 'en'
+  var L = en
+    ? { month: 'month', year: 'year', or: 'or', onRequest: 'On request', recommended: 'Recommended', members: 'members', upTo: 'Up to', unlimitedMembers: 'Unlimited members', mails: 'mails a month', storage: 'storage', start: 'Start a club', ask: 'Ask for an offer', addons: 'Add-ons', addonsLead: 'Add these to any plan, per month.', perMonth: '/ month' }
+    : { month: 'Monat', year: 'Jahr', or: 'oder', onRequest: 'Auf Anfrage', recommended: 'Empfohlen', members: 'Mitglieder', upTo: 'Bis', unlimitedMembers: 'Unbegrenzt Mitglieder', mails: 'Mails pro Monat', storage: 'Speicher', start: 'Verein starten', ask: 'Angebot anfragen', addons: 'Zusatzoptionen', addonsLead: 'Zu jedem Tarif dazubuchbar, pro Monat.', perMonth: '/ Monat' }
+  var el = function (tag, cls, text) {
+    var n = document.createElement(tag)
+    if (cls) n.className = cls
+    if (text != null) n.textContent = text
+    return n
+  }
+  var num = function (n) {
+    return Number(n).toLocaleString(en ? 'en-GB' : 'de-CH')
+  }
+  var chf = function (v) {
+    var n = Number(v)
+    return 'CHF ' + (n % 1 ? n.toFixed(2) : String(n))
+  }
+  var size = function (mb) {
+    return mb >= 1024 ? num(Math.round((mb / 1024) * 10) / 10) + ' GB' : num(mb) + ' MB'
+  }
+  var getJSON = function (path, done) {
+    // Give up after 6 s. Down, in maintenance (503), an HTML error page or
+    // a broken answer all leave the static text in place.
+    if (!window.fetch) return
+    var ctrl = window.AbortController ? new AbortController() : null
+    var timer = ctrl && setTimeout(function () {
+      ctrl.abort()
+    }, 6000)
+    fetch(API + path, { credentials: 'omit', signal: ctrl ? ctrl.signal : undefined })
+      .then(function (r) {
+        return r.ok ? r.json() : null
+      })
+      .then(function (d) {
+        if (d && typeof d === 'object') done(d)
+      })
+      .catch(function () {})
+      .then(function () {
+        clearTimeout(timer)
+      })
+  }
+
+  var plansBox = document.querySelector('[data-plans]')
+  if (plansBox) {
+    getJSON('/api/v1/public/pricing', function (d) {
+      var plans = (Array.isArray(d.plans) ? d.plans : []).slice().sort(function (a, b) {
+        return (a.sort || 0) - (b.sort || 0)
+      })
+      var built = document.createDocumentFragment()
+      if (plans.length) {
+        plans.forEach(function (p) {
+          var card = el('article', 'plan' + (p.highlighted ? ' hi' : ''))
+          if (p.highlighted) card.appendChild(el('span', 'tag new', L.recommended))
+          card.appendChild(el('h3', null, en ? p.name_en : p.name_de))
+          var desc = en ? p.description_en : p.description_de
+          if (desc) card.appendChild(el('p', 'plan-desc', desc))
+          var big = el('p', 'big')
+          if (p.price_month_chf == null) big.textContent = L.onRequest
+          else {
+            big.textContent = chf(p.price_month_chf) + ' '
+            big.appendChild(el('small', null, L.perMonth))
+          }
+          card.appendChild(big)
+          if (p.price_year_chf != null) card.appendChild(el('p', 'plan-year', L.or + ' ' + chf(p.price_year_chf) + ' / ' + L.year))
+          var ul = el('ul', 'checks')
+          var lim = p.limits || {}
+          if ('members' in lim) ul.appendChild(el('li', null, lim.members == null ? L.unlimitedMembers : L.upTo + ' ' + num(lim.members) + ' ' + L.members))
+          if (lim.mail_month != null) ul.appendChild(el('li', null, num(lim.mail_month) + ' ' + L.mails))
+          if (lim.storage_mb != null) ul.appendChild(el('li', null, size(lim.storage_mb) + ' ' + L.storage))
+          ;(p.features || []).forEach(function (f) {
+            var t = en ? f.en || f.de : f.de || f.en
+            if (t) ul.appendChild(el('li', null, t))
+          })
+          if (ul.children.length) card.appendChild(ul)
+          var a = el('a', 'btn ' + (p.highlighted ? 'btn-p' : 'btn-s'), p.price_month_chf == null ? L.ask : L.start)
+          a.href = p.price_month_chf == null ? 'mailto:hi@hubra.club' : 'https://sso.hubra.club/start'
+          card.appendChild(a)
+          built.appendChild(card)
+        })
+        plansBox.appendChild(built)
+        plansBox.hidden = false
+        Array.prototype.forEach.call(document.querySelectorAll('[data-plans-text]'), function (n) {
+          n.textContent = n.getAttribute('data-plans-text')
+        })
+      }
+      var addons = Array.isArray(d.addons) ? d.addons : []
+      var addBox = document.querySelector('[data-addons]')
+      if (addBox && addons.length) {
+        var head = document.createDocumentFragment()
+        head.appendChild(el('h3', null, L.addons))
+        head.appendChild(el('p', null, L.addonsLead))
+        var list = el('ul', 'addon-list')
+        addons.forEach(function (x) {
+          var li = el('li')
+          var name = el('div')
+          name.appendChild(el('strong', null, en ? x.name_en : x.name_de))
+          var note = en ? x.note_en : x.note_de
+          if (note) name.appendChild(el('span', null, note))
+          li.appendChild(name)
+          li.appendChild(el('span', 'addon-price', x.price_month_chf == null ? L.onRequest : chf(x.price_month_chf) + ' ' + L.perMonth))
+          list.appendChild(li)
+        })
+        head.appendChild(list)
+        addBox.appendChild(head)
+        addBox.hidden = false
+      }
+    })
+  }
+
+  var pluginGrid = document.querySelector('[data-plugins]')
+  if (pluginGrid) {
+    getJSON('/api/v1/public/plugins', function (d) {
+      ;(Array.isArray(d.plugins) ? d.plugins : []).forEach(function (p) {
+        var card = pluginGrid.querySelector('[data-plugin="' + String(p.id).replace(/["\\]/g, '') + '"]')
+        if (!card) {
+          card = el('article', 'feat')
+          card.setAttribute('data-plugin', p.id)
+          card.appendChild(el('span', 'tag', 'Plugin'))
+          card.appendChild(el('h3', null, p.name))
+          if (p.description) card.appendChild(el('p', null, p.description))
+          pluginGrid.appendChild(card)
+        }
+        var prices = (p.modules || [])
+          .map(function (m) {
+            return m.price_month_chf
+          })
+          .filter(function (v) {
+            return v != null
+          })
+          .map(Number)
+        if (prices.length) {
+          var total = prices.reduce(function (a, b) {
+            return a + b
+          }, 0)
+          card.appendChild(el('p', 'plugin-price', chf(total) + ' ' + L.perMonth))
+        }
+      })
+    })
+  }
+
   // Legal pages: mark the section being read in the table of contents.
   var tocLinks = Array.prototype.slice.call(document.querySelectorAll('.toc a'))
   if (tocLinks.length && 'IntersectionObserver' in window) {
