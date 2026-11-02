@@ -55,17 +55,17 @@ T = {
         "skip": "Zum Inhalt springen",
         "home_label": "Hubra, Startseite",
         "nav_label": "Hauptnavigation",
-        "nav": [("/#funktionen", "Funktionen"), ("/#sicherheit", "Sicherheit"), ("/#plugins", "Plugins"), ("/#preise", "Preise"), ("/#fragen", "Fragen")],
+        "nav": [("/funktionen/", "Funktionen"), ("/sicherheit/", "Sicherheit"), ("/plugins/", "Plugins"), ("/preise/", "Preise"), ("/fragen/", "Fragen"), ("/kontakt/", "Kontakt")],
         "signin": "Anmelden",
         "start": "Verein starten",
         "menu": "Menü",
         "theme": "Farbschema wechseln",
         "other_lang": ("EN", "en", "English"),
         "foot": [
-            ("Produkt", [("/#funktionen", "Funktionen"), ("/#plugins", "Plugins"), ("https://plugins.hubra.club", "Plugin-Marktplatz"), ("/#preise", "Preise"), ("/#fragen", "Häufige Fragen")]),
+            ("Produkt", [("/funktionen/", "Funktionen"), ("/sicherheit/", "Sicherheit"), ("/plugins/", "Plugins"), ("https://plugins.hubra.club", "Plugin-Marktplatz"), ("/preise/", "Preise"), ("/fragen/", "Häufige Fragen")]),
             ("Konto", [(APP, "Anmelden"), (SSO + "/signup", "Konto erstellen"), (SSO + "/start", "Verein starten"), (SSO + "/account", "Mein Konto")]),
             ("Rechtliches", [("/impressum/", "Impressum"), ("/datenschutz/", "Datenschutz"), ("/nutzungsbedingungen/", "Nutzungsbedingungen"), ("/auftragsverarbeitung/", "Auftragsverarbeitung"), ("/cookies/", "Cookies")]),
-            ("Kontakt", [("mailto:hi@hubra.club", "hi@hubra.club"), ("https://github.com/hubra-app", "GitHub"), ("/.well-known/security.txt", "Sicherheitslücke melden")]),
+            ("Kontakt", [("/kontakt/", "Kontakt"), ("mailto:hi@hubra.club", "hi@hubra.club"), ("https://github.com/hubra-app", "GitHub"), ("/.well-known/security.txt", "Sicherheitslücke melden")]),
         ],
         "tagline": "Vereinssoftware aus der Schweiz. Gehostet in Europa.",
         "toc": "Inhalt",
@@ -83,17 +83,17 @@ T = {
         "skip": "Skip to content",
         "home_label": "Hubra, home",
         "nav_label": "Main navigation",
-        "nav": [("/en/#features", "Features"), ("/en/#security", "Security"), ("/en/#plugins", "Plugins"), ("/en/#pricing", "Pricing"), ("/en/#faq", "FAQ")],
+        "nav": [("/en/features/", "Features"), ("/en/security/", "Security"), ("/en/plugins/", "Plugins"), ("/en/pricing/", "Pricing"), ("/en/faq/", "FAQ"), ("/en/contact/", "Contact")],
         "signin": "Sign in",
         "start": "Start a club",
         "menu": "Menu",
         "theme": "Change colour scheme",
         "other_lang": ("DE", "de-CH", "Deutsch"),
         "foot": [
-            ("Product", [("/en/#features", "Features"), ("/en/#plugins", "Plugins"), ("https://plugins.hubra.club", "Plugin marketplace"), ("/en/#pricing", "Pricing"), ("/en/#faq", "FAQ")]),
+            ("Product", [("/en/features/", "Features"), ("/en/security/", "Security"), ("/en/plugins/", "Plugins"), ("https://plugins.hubra.club", "Plugin marketplace"), ("/en/pricing/", "Pricing"), ("/en/faq/", "FAQ")]),
             ("Account", [(APP, "Sign in"), (SSO + "/signup", "Create an account"), (SSO + "/start", "Start a club"), (SSO + "/account", "My account")]),
             ("Legal", [("/en/imprint/", "Imprint"), ("/en/privacy/", "Privacy"), ("/en/terms/", "Terms of use"), ("/en/dpa/", "Data processing"), ("/en/cookies/", "Cookies")]),
-            ("Contact", [("mailto:hi@hubra.club", "hi@hubra.club"), ("https://github.com/hubra-app", "GitHub"), ("/.well-known/security.txt", "Report a vulnerability")]),
+            ("Contact", [("/en/contact/", "Contact"), ("mailto:hi@hubra.club", "hi@hubra.club"), ("https://github.com/hubra-app", "GitHub"), ("/.well-known/security.txt", "Report a vulnerability")]),
         ],
         "tagline": "Club software from Switzerland. Hosted in Europe.",
         "toc": "Contents",
@@ -155,7 +155,7 @@ def read_page(src: Path) -> Page:
 
 
 def link(href: str, label: str, **attrs: str) -> str:
-    extra = "".join(f' {k.rstrip("_")}="{v}"' for k, v in attrs.items())
+    extra = "".join(f' {k.rstrip("_").replace("_", "-")}="{v}"' for k, v in attrs.items())
     return f'<a href="{href}"{extra}>{label}</a>'
 
 
@@ -227,7 +227,9 @@ def render(page: Page, pages_by_path: dict[str, Page]) -> str:
 
     other_label, other_hreflang, other_name = t["other_lang"]
     other_href = page.alt or T[alt_lang]["home"]
-    nav = "\n".join(f"      {link(h, l)}" for h, l in t["nav"])
+    nav = "\n".join(
+        f"      {link(h, l, aria_current='page') if h == page.path else link(h, l)}" for h, l in t["nav"]
+    )
     header = f"""<body>
 <a class="skip" href="#main">{t["skip"]}</a>
 

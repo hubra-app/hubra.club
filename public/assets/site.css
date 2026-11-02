@@ -421,3 +421,16 @@ section { padding-block: 96px; }
   .foot-base { flex-direction: column; }
   .cta .btn { flex: 1 1 100%; }
 }
+
+/* ── multi-page: page heroes, link cards, active nav ────────────────────── */
+.page-hero { padding-block: 64px 56px; }
+.page-hero h1 { font-size: clamp(2.4rem, 5.6vw, 3.8rem); max-width: 18em; }
+.page-hero p { font-size: 1.15rem; }
+.nav a[aria-current="page"] { color: var(--accent-text); background: var(--tint); font-weight: 600; }
+.link-card { text-decoration: none; color: inherit; }
+.link-card:hover { transform: translateY(-2px); }
+.link-card h3 { color: var(--text); }
+.more-link { color: var(--accent-text); font-weight: 600; text-decoration: none; margin-top: 4px; }
+a.more-link:hover { text-decoration: underline; }
+.grid.two { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 640px) { .grid.two { grid-template-columns: 1fr; } }

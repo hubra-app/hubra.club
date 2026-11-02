@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sicherheit und Datenschutz · Hubra</title>
+<meta name="description" content="Wie Hubra die Daten eures Vereins schützt: Hosting in Europa, Schlüssel pro Verein, verschlüsselte Backups, Passkeys und 2FA, kein Tracking.">
+<link rel="canonical" href="https://hubra.club/sicherheit/">
+<link rel="alternate" hreflang="de-CH" href="https://hubra.club/sicherheit/">
+<link rel="alternate" hreflang="en" href="https://hubra.club/en/security/">
+<link rel="alternate" hreflang="x-default" href="https://hubra.club/sicherheit/">
+<meta name="theme-color" content="#7441e0">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hubra">
+<meta property="og:title" content="Sicherheit und Datenschutz · Hubra">
+<meta property="og:description" content="Wie Hubra die Daten eures Vereins schützt: Hosting in Europa, Schlüssel pro Verein, verschlüsselte Backups, Passkeys und 2FA, kein Tracking.">
+<meta property="og:url" content="https://hubra.club/sicherheit/">
+<meta property="og:image" content="https://hubra.club/assets/og.png">
+<meta property="og:locale" content="de_CH">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/assets/fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/theme.js"></script>
+<script src="/assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Hubra, Startseite">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="15" fill="#7441e0"/><path d="M21 14V50M21 35a11 11 0 0 1 22 0V50" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="45" r="4" fill="#fece2b"/></svg>
+      <span class="wordmark">hubra</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Hauptnavigation">
+      <a href="/funktionen/">Funktionen</a>
+      <a href="/sicherheit/" aria-current="page">Sicherheit</a>
+      <a href="/plugins/">Plugins</a>
+      <a href="/preise/">Preise</a>
+      <a href="/fragen/">Fragen</a>
+      <a href="/kontakt/">Kontakt</a>
+      <span class="nav-extra">
+        <a href="https://app.hubra.club">Anmelden</a>
+        <a href="/en/security/" hreflang="en" lang="en">English</a>
+      </span>
+    </nav>
+    <div class="top-actions">
+      <button class="icon-btn theme-btn" type="button" aria-label="Farbschema wechseln" title="Farbschema wechseln" hidden><svg class="i-auto" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5v17a8.5 8.5 0 0 0 0-17z" fill="currentColor" stroke="none"/></svg><svg class="i-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg><svg class="i-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg></button>
+      <a class="lang" href="/en/security/" hreflang="en" lang="en" title="English">EN</a>
+      <a class="signin" href="https://app.hubra.club">Anmelden</a>
+      <a class="btn btn-p btn-sm" href="https://sso.hubra.club/start">Verein starten</a>
+      <button class="icon-btn menu-btn" type="button" aria-label="Menü" aria-expanded="false" aria-controls="nav" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<div class="doc-hero page-hero">
+  <div class="wrap">
+    <p class="crumbs"><a href="/">Hubra</a> › Sicherheit und Datenschutz</p>
+    <h1>Eure Mitgliederdaten sind bei uns gut aufgehoben.</h1>
+    <p>Vereine verwalten Adressen, Zahlungen und manchmal Daten von Kindern. Deshalb ist Sicherheit bei Hubra kein Zusatz, sondern eingebaut.</p>
+  </div>
+</div>
+
+<section  id="sicherheit">
+  <div class="wrap">
+    <div class="grid">
+      <article class="feat">
+        <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
+        <h3>Gehostet in Europa</h3>
+        <p>Server und Backups liegen in Rechenzentren in Europa. Für Vereine gelten das Schweizer DSG und die DSGVO.</p>
+      </article>
+      <article class="feat">
+        <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+        <h3>Ein Schlüssel pro Verein</h3>
+        <p>Jeder Verein hat einen eigenen Bereich und eigene Schlüssel für vertrauliche Daten wie Türcodes und Zugangsdaten.</p>
+      </article>
+      <article class="feat">
+        <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Verschlüsselte Backups</h3>
+        <p>Tägliche Backups, verschlüsselt, bevor sie den Server verlassen. Ohne den privaten Schlüssel kann niemand sie lesen, auch nicht der Speicheranbieter.</p>
+      </article>
+      <article class="feat">
+        <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M15 8l2 2"/></svg></div>
+        <h3>Passkeys und zwei Faktoren</h3>
+        <p>Passkeys, Einmalcodes per App und eine Mail bei jeder Anmeldung von einem neuen Gerät. Vereine können 2FA für den Vorstand verlangen.</p>
+      </article>
+      <article class="feat">
+        <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4h9a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9"/><path d="M4 4l5 5M9 4v5H4"/><path d="M9 13h7M9 17h5"/></svg></div>
+        <h3>Nachvollziehbar</h3>
+        <p>Ein Protokoll zeigt dem Vorstand, wer wann was geändert hat. Greift unser Support zu, ist das begründet, zeitlich begrenzt und im Verein als Banner sichtbar.</p>
+      </article>
+      <article class="feat">
+        <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.7 5.7l12.6 12.6"/></svg></div>
+        <h3>Kein Tracking, keine Werbung</h3>
+        <p>Keine Analysedienste, keine Werbe-Cookies, kein Verkauf von Daten. Wir verdienen mit dem Betrieb, nicht mit euren Daten.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="rechtliches">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Alles schwarz auf weiss</h2>
+      <p>Unsere rechtlichen Seiten sind noch Entwürfe und werden vor dem Start rechtlich geprüft.</p>
+    </div>
+    <div class="grid">
+      <a class="feat link-card" href="/datenschutz/">
+        <h3>Datenschutzerklärung</h3>
+        <p>Welche Daten wir bearbeiten, wem wir sie anvertrauen und wie lange wir sie behalten.</p>
+      </a>
+      <a class="feat link-card" href="/auftragsverarbeitung/">
+        <h3>Auftragsverarbeitung</h3>
+        <p>Die Vereinbarung für Vereine, mit allen Unterauftragsverarbeitern und Massnahmen.</p>
+      </a>
+      <a class="feat link-card" href="/cookies/">
+        <h3>Cookies</h3>
+        <p>Nur technisch nötige Cookies, keine Werbung und kein Tracking.</p>
+      </a>
+      <a class="feat link-card" href="/nutzungsbedingungen/">
+        <h3>Nutzungsbedingungen</h3>
+        <p>Die Regeln für Konten und Vereinsbereiche.</p>
+      </a>
+      <a class="feat link-card" href="/impressum/">
+        <h3>Impressum</h3>
+        <p>Wer hinter Hubra steht.</p>
+      </a>
+      <a class="feat link-card" href="/.well-known/security.txt">
+        <h3>Sicherheitslücke melden</h3>
+        <p>Wie ihr uns ein Sicherheitsproblem vertraulich meldet.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div class="cta-card">
+      <div>
+        <h2>Bereit für euer Clubhaus?</h2>
+        <p>Beantragt euren Verein in zwei Minuten, oder erzählt uns zuerst, was ihr braucht. Wir helfen beim Start.</p>
+      </div>
+      <div class="cta">
+        <a class="btn btn-w" href="https://sso.hubra.club/start">Verein starten</a>
+        <a class="btn btn-ghost-w" href="/kontakt/">Kontakt aufnehmen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-brand">
+      <a class="brand" href="/" aria-label="Hubra, Startseite">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="15" fill="#7441e0"/><path d="M21 14V50M21 35a11 11 0 0 1 22 0V50" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="45" r="4" fill="#fece2b"/></svg>
+        <span class="wordmark">hubra</span>
+      </a>
+      <p>Vereinssoftware aus der Schweiz. Gehostet in Europa.</p>
+    </div>
+    <div class="foot-cols">
+      <div>
+        <h2>Produkt</h2>
+        <ul>
+          <li><a href="/funktionen/">Funktionen</a></li>
+          <li><a href="/sicherheit/">Sicherheit</a></li>
+          <li><a href="/plugins/">Plugins</a></li>
+          <li><a href="https://plugins.hubra.club">Plugin-Marktplatz</a></li>
+          <li><a href="/preise/">Preise</a></li>
+          <li><a href="/fragen/">Häufige Fragen</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Konto</h2>
+        <ul>
+          <li><a href="https://app.hubra.club">Anmelden</a></li>
+          <li><a href="https://sso.hubra.club/signup">Konto erstellen</a></li>
+          <li><a href="https://sso.hubra.club/start">Verein starten</a></li>
+          <li><a href="https://sso.hubra.club/account">Mein Konto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Rechtliches</h2>
+        <ul>
+          <li><a href="/impressum/">Impressum</a></li>
+          <li><a href="/datenschutz/">Datenschutz</a></li>
+          <li><a href="/nutzungsbedingungen/">Nutzungsbedingungen</a></li>
+          <li><a href="/auftragsverarbeitung/">Auftragsverarbeitung</a></li>
+          <li><a href="/cookies/">Cookies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Kontakt</h2>
+        <ul>
+          <li><a href="/kontakt/">Kontakt</a></li>
+          <li><a href="mailto:hi@hubra.club">hi@hubra.club</a></li>
+          <li><a href="https://github.com/hubra-app">GitHub</a></li>
+          <li><a href="/.well-known/security.txt">Sicherheitslücke melden</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Hubra</span>
+      <a href="/en/security/" hreflang="en" lang="en">English</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
