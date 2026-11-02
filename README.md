@@ -2,29 +2,49 @@
 
 [![Pages](https://github.com/hubra-app/hubra.club/actions/workflows/pages.yml/badge.svg?branch=main)](https://github.com/hubra-app/hubra.club/actions/workflows/pages.yml?query=branch%3Amain)
 
-The Hubra landing page. Plain static files in `public/`, no build step, no
-external requests: fonts, icons and images are all served from the site.
+The Hubra website. Plain static files in `public/`, no external requests:
+fonts, icons and images are all served from the site. The look follows the
+Hubra apps (same colour tokens, fonts and violet brand panel as the sign-in
+page), in light and dark mode.
 
 | Path | What it is |
 | --- | --- |
-| `public/index.html` | German page (de-CH), served at `/` |
-| `public/en/index.html` | English page, served at `/en/` |
-| `public/impressum/`, `public/datenschutz/` | Legal notice and privacy policy (German) |
-| `public/404.html` | Not-found page |
-| `public/assets/site.css` | All styles, brand tokens at the top |
+| `src/pages/*.html` | Page sources (German), one per page, with a settings comment at the top |
+| `src/pages/en/*.html` | English pages |
+| `tools/build.py` | Wraps every page in the shared head, header and footer and writes `public/` |
+| `public/` | The built site, committed and published as it is |
+| `public/assets/site.css` | All styles, colour tokens at the top (same values as `packages/ui` in hubra-app/hubra) |
+| `public/assets/theme.js`, `site.js` | Theme before first paint (shares the `hubra_theme` cookie with the apps), theme switch, phone menu, product tour tabs |
 | `public/assets/fonts/` | Bricolage Grotesque and Hanken Grotesk (SIL OFL 1.1), latin + latin-ext |
-| `public/assets/og.png`, `og-en.png` | Link preview images (1200×630) |
-| `public/bimi.svg` | Sender logo for mail (BIMI, SVG Tiny PS), served at `https://hubra.club/bimi.svg`. Copy of `brand/hubra-bimi.svg` in hubra-app/hubra |
+| `public/.well-known/security.txt` | Where to report security problems |
+| `public/bimi.svg` | Sender logo for mail (BIMI, SVG Tiny PS). Copy of `brand/hubra-bimi.svg` in hubra-app/hubra |
+
+Pages: home (`/`, `/en/`), Datenschutz/privacy, Impressum/imprint,
+Nutzungsbedingungen/terms, Auftragsverarbeitung/dpa, cookies, 404. The legal
+pages are drafts (yellow notice, `noindex`) until they are reviewed.
+
+## Editing
+
+1. Change a page in `src/pages/` (and its other language), or the shared
+   header and footer in `tools/build.py`.
+2. Run `python3 tools/build.py`. It rewrites `public/**/index.html` and
+   `public/sitemap.xml` and checks that every internal link exists.
+3. Commit `src/` and `public/` together. The **Check** workflow runs
+   `python3 tools/build.py --check` on pull requests and fails if `public/`
+   is out of date.
+
+In a page, `<!-- toc -->` becomes a table of contents from the `<h2 id>`
+headings and `<!-- draft -->` the "not yet reviewed" notice.
 
 Preview locally with `python3 -m http.server -d public 8000` and open
 http://localhost:8000.
 
-Both pages are written by hand. When you change one, change the other too.
-
 ## Before going live
 
 Make sure `hi@hubra.club` receives mail. If the site moves away from GitHub
-Pages, update the hosting provider in `public/datenschutz/index.html`.
+Pages, update the hosting provider in `src/pages/datenschutz.html` and
+`src/pages/en/privacy.html`. Remove the draft notice and `index: no` from the
+legal pages once they have been reviewed.
 
 ## Deploy on GitLab Pages
 
