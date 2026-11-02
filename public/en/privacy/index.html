@@ -105,9 +105,9 @@
 
     <h2 id="controller">1. Who is responsible</h2>
     <p>The controller for personal data on hubra.club and for Hubra accounts is:</p>
-    <p>Mike Keller, Hubra <span class="todo">(sole proprietorship, not entered in the commercial register)</span><br>Grossfeld 17, 6423 Seewen, Switzerland<br>Email: <a href="mailto:hi@hubra.club">hi@hubra.club</a></p>
+    <p>Mike Keller, Hubra (sole proprietorship, not entered in the commercial register)<br>Grossfeld 17, 6423 Seewen, Switzerland<br>Email: <a href="mailto:hi@hubra.club">hi@hubra.club</a></p>
     <p>This policy follows the Swiss Federal Act on Data Protection (FADP) and, where it applies, the EU General Data Protection Regulation (GDPR).</p>
-    <p><span class="todo">EU representative (Art. 27 GDPR): still to be clarified whether Hubra must name a representative in the EU once clubs from the EU use Hubra.</span></p>
+    <p>Hubra has not appointed a representative in the EU.</p>
 
     <h2 id="roles">2. Who is responsible for what</h2>
     <p>Hubra is a platform where many clubs each have their own space. So there are two roles:</p>
@@ -149,19 +149,18 @@
     <p>When you write to us or report a problem or suggest an idea in the app, we use what you send to reply and to improve Hubra. Before you send a problem report, the app shows you which technical details (e.g. browser, screen size, app version) go with it. Ideas we show on the public roadmap appear without your name.</p>
 
     <h2 id="customers">8. Clubs as customers</h2>
-    <p>When a club requests or uses Hubra, we process the club's name and address and the names and contact details of its contact people to conclude the contract and invoice. We keep accounting records for ten years, as Swiss law requires (Art. 958f CO). <span class="todo">Once Hubra charges clubs, the payment provider is added here (planned: Stripe).</span></p>
+    <p>When a club requests or uses Hubra, we process the club's name and address and the names and contact details of its contact people to conclude the contract and invoice. We keep accounting records for ten years, as Swiss law requires (Art. 958f CO). We use Stripe for billing (see <a href="#processors">service providers</a>). Card details go straight to Stripe; we only see the last four digits and the expiry date.</p>
 
     <h2 id="processors">9. Service providers and recipients</h2>
     <p>We only share personal data with service providers we need to run Hubra, and only as much as necessary. We have data processing agreements with all of them or have accepted their standard terms for it.</p>
     <table>
       <thead><tr><th>Provider</th><th>What for</th><th>Data location</th></tr></thead>
       <tbody>
-        <tr><td><span class="todo">Contabo GmbH, Munich, Germany</span></td><td>Servers for the Hubra app and encrypted backups (object storage)</td><td><span class="todo">Germany</span></td></tr>
-        <tr><td><span class="todo">Cloudflare, Inc., USA</span></td><td>DNS and attack protection for app., sso., manage. and api.hubra.club; passes traffic on encrypted</td><td>worldwide, USA</td></tr>
+        <tr><td>Contabo GmbH, Munich, Germany</td><td>Servers for the Hubra app and encrypted backups (object storage)</td><td><span class="todo">Germany</span></td></tr>
+        <tr><td><span class="todo">Stripe Payments Europe, Ltd., Dublin, Ireland</span></td><td>Billing and payments from clubs to Hubra, once Hubra charges clubs. Concerns only clubs and their contact people, no member data.</td><td>EU, USA</td></tr>
         <tr><td><span class="todo">Infomaniak Network SA, Geneva, Switzerland</span></td><td>Sending mail</td><td>Switzerland</td></tr>
         <tr><td><span class="todo">Brevo SAS, Paris, France</span></td><td>Backup mail sending, only when the main service fails</td><td>EU</td></tr>
         <tr><td>GitHub, Inc., USA</td><td>Hosting this website and the plugin marketplace (plugins.hubra.club)</td><td>USA</td></tr>
-        <tr><td><span class="todo">Google LLC, USA</span></td><td><span class="todo">Fonts in the club app (Google Fonts). Google learns your IP address. We are moving to self-hosted fonts.</span></td><td>USA</td></tr>
         <tr><td>Discord Inc., USA</td><td>Only if a club uses the Discord plugin: announcements, roles and direct messages; the Discord ID for linked accounts</td><td>USA</td></tr>
         <tr><td>Your browser's push service (Google, Apple, Mozilla, Microsoft)</td><td>Only if you switch on push notifications: delivering the encrypted message</td><td>depends on the browser, including the USA</td></tr>
       </tbody>

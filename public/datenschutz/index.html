@@ -105,9 +105,9 @@
 
     <h2 id="verantwortlich">1. Wer verantwortlich ist</h2>
     <p>Verantwortlich für die Bearbeitung von Personendaten auf hubra.club und für die Hubra-Konten ist:</p>
-    <p>Mike Keller, Hubra <span class="todo">(Einzelunternehmen, ohne Handelsregistereintrag)</span><br>Grossfeld 17, 6423 Seewen, Schweiz<br>E-Mail: <a href="mailto:hi@hubra.club">hi@hubra.club</a></p>
+    <p>Mike Keller, Hubra (Einzelunternehmen, ohne Handelsregistereintrag)<br>Grossfeld 17, 6423 Seewen, Schweiz<br>E-Mail: <a href="mailto:hi@hubra.club">hi@hubra.club</a></p>
     <p>Diese Erklärung richtet sich nach dem Schweizer Datenschutzgesetz (DSG) und, soweit anwendbar, nach der Datenschutz-Grundverordnung der EU (DSGVO).</p>
-    <p><span class="todo">Vertretung in der EU (Art. 27 DSGVO): noch zu klären, ob Hubra eine Vertretung in der EU benennen muss, sobald Vereine aus der EU Hubra nutzen.</span></p>
+    <p>Hubra hat keine Vertretung in der EU benannt.</p>
 
     <h2 id="rollen">2. Wer wofür verantwortlich ist</h2>
     <p>Hubra ist eine Plattform, auf der viele Vereine je ihren eigenen Bereich haben. Deshalb gibt es zwei Rollen:</p>
@@ -149,19 +149,18 @@
     <p>Wenn ihr uns schreibt oder in der App ein Problem meldet oder eine Idee vorschlagt, bearbeiten wir eure Angaben, um zu antworten und Hubra zu verbessern. Bei einer Problemmeldung zeigt euch die App vor dem Senden, welche technischen Angaben (z. B. Browser, Bildschirmgrösse, App-Version) mitgeschickt werden. Ideen, die wir auf der öffentlichen Roadmap zeigen, erscheinen ohne euren Namen.</p>
 
     <h2 id="vereine-als-kunden">8. Vereine als Kunden</h2>
-    <p>Wenn ein Verein Hubra beantragt oder nutzt, bearbeiten wir Name und Adresse des Vereins sowie Namen und Kontaktdaten der Ansprechpersonen, um den Vertrag abzuschliessen und abzurechnen. Buchhaltungsbelege bewahren wir zehn Jahre auf, wie es das Schweizer Obligationenrecht verlangt (Art. 958f OR). <span class="todo">Sobald Hubra kostenpflichtig wird, kommt hier der Zahlungsdienstleister dazu (geplant: Stripe).</span></p>
+    <p>Wenn ein Verein Hubra beantragt oder nutzt, bearbeiten wir Name und Adresse des Vereins sowie Namen und Kontaktdaten der Ansprechpersonen, um den Vertrag abzuschliessen und abzurechnen. Buchhaltungsbelege bewahren wir zehn Jahre auf, wie es das Schweizer Obligationenrecht verlangt (Art. 958f OR). Für die Abrechnung nutzen wir Stripe (siehe <a href="#dienstleister">Dienstleister</a>). Kartendaten gehen direkt an Stripe; wir sehen davon nur die letzten vier Ziffern und das Ablaufdatum.</p>
 
     <h2 id="dienstleister">9. Dienstleister und Empfänger</h2>
     <p>Wir geben Personendaten nur an Dienstleister weiter, die wir für den Betrieb brauchen, und nur so viel wie nötig. Mit allen haben wir Verträge zur Auftragsverarbeitung abgeschlossen oder ihre Standardbedingungen dafür akzeptiert.</p>
     <table>
       <thead><tr><th>Dienstleister</th><th>Wofür</th><th>Ort der Daten</th></tr></thead>
       <tbody>
-        <tr><td><span class="todo">Contabo GmbH, München, Deutschland</span></td><td>Server der Hubra-App und verschlüsselte Backups (Object Storage)</td><td><span class="todo">Deutschland</span></td></tr>
-        <tr><td><span class="todo">Cloudflare, Inc., USA</span></td><td>DNS und Schutz vor Angriffen für app., sso., manage. und api.hubra.club; leitet den Datenverkehr verschlüsselt weiter</td><td>weltweit, USA</td></tr>
+        <tr><td>Contabo GmbH, München, Deutschland</td><td>Server der Hubra-App und verschlüsselte Backups (Object Storage)</td><td><span class="todo">Deutschland</span></td></tr>
+        <tr><td><span class="todo">Stripe Payments Europe, Ltd., Dublin, Irland</span></td><td>Abrechnung und Zahlungen der Vereine an Hubra, sobald Hubra kostenpflichtig wird. Betrifft nur Vereine und ihre Ansprechpersonen, keine Mitgliederdaten.</td><td>EU, USA</td></tr>
         <tr><td><span class="todo">Infomaniak Network SA, Genf, Schweiz</span></td><td>Versand von Mails</td><td>Schweiz</td></tr>
         <tr><td><span class="todo">Brevo SAS, Paris, Frankreich</span></td><td>Ersatz für den Mailversand, nur wenn der Hauptdienst ausfällt</td><td>EU</td></tr>
         <tr><td>GitHub, Inc., USA</td><td>Hosting dieser Website und des Plugin-Marktplatzes (plugins.hubra.club)</td><td>USA</td></tr>
-        <tr><td><span class="todo">Google LLC, USA</span></td><td><span class="todo">Schriften der Vereins-App (Google Fonts). Dabei erfährt Google eure IP-Adresse. Wir stellen das auf selbst ausgelieferte Schriften um.</span></td><td>USA</td></tr>
         <tr><td>Discord Inc., USA</td><td>Nur wenn ein Verein das Discord-Plugin nutzt: Ankündigungen, Rollen und Direktnachrichten; bei verknüpften Konten die Discord-ID</td><td>USA</td></tr>
         <tr><td>Push-Dienst eures Browsers (Google, Apple, Mozilla, Microsoft)</td><td>Nur wenn ihr Push-Nachrichten einschaltet: Zustellung der verschlüsselten Nachricht</td><td>je nach Browser, auch USA</td></tr>
       </tbody>
