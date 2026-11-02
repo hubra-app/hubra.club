@@ -33,6 +33,23 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 800;
+  src: url(fonts/jetbrains-mono-latin-ext-wght-normal.woff2) format("woff2-variations");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 800;
+  src: url(fonts/jetbrains-mono-latin-wght-normal.woff2) format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 /* Colour tokens: the same values as the app (packages/ui/src/ui.css and
    theme.ts in hubra-app/hubra), so the site, sign-in, club app and manage
    look like one product in light and dark mode. */
@@ -46,7 +63,7 @@
   --text: #1a1625; --text-2: #5e5873; --text-3: #8c86a0;
   --accent: var(--v6); --accent-hover: var(--v7); --accent-text: var(--v6); --on-accent: #ffffff;
   --tint: var(--v0); --tint-text: var(--v7);
-  --ok: #1f9d57; --ok-bg: #e3f4ec;
+  --ok: #18794e; --ok-bg: #e3f4ec;
   --notice-bg: var(--gold-0); --notice-border: var(--gold-3);
   --shadow-sm: 0 1px 2px rgba(26,22,37,.05), 0 4px 12px -6px rgba(26,22,37,.08);
   --shadow-md: 0 2px 4px rgba(26,22,37,.04), 0 12px 28px -12px rgba(26,22,37,.16);
@@ -170,7 +187,7 @@ code { font-family: var(--mono); font-size: .86em; background: var(--surface-2);
 :root[data-theme="dark"] .app-side { background: #151517; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .app-side { background: #151517; } }
 .club { display: flex; align-items: center; gap: 10px; padding: 4px 8px 16px; font-weight: 700; font-family: var(--display); font-size: 15px; }
-.club i { width: 30px; height: 30px; border-radius: 9px; background: linear-gradient(135deg, #1f9d57, #14713e); display: grid; place-items: center; color: #fff; font-style: normal; font-size: 13px; }
+.club i { width: 30px; height: 30px; border-radius: 9px; background: linear-gradient(135deg, #18794e, #115537); display: grid; place-items: center; color: #fff; font-style: normal; font-size: 13px; }
 .side-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--text-3); padding: 12px 10px 4px; }
 .side-item { display: flex; align-items: center; gap: 10px; padding: 7px 10px; border-radius: 8px; color: var(--text-2); font-weight: 500; }
 .side-item svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
@@ -307,7 +324,7 @@ section { padding-block: 96px; }
 .price p { color: var(--text-2); }
 .checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
 .checks li { display: grid; grid-template-columns: 20px 1fr; gap: 10px; color: var(--text); }
-.checks li::before { content: ""; width: 20px; height: 20px; margin-top: 3px; border-radius: 6px; background: var(--ok-bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231f9d57' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/13px no-repeat; }
+.checks li::before { content: ""; width: 20px; height: 20px; margin-top: 3px; border-radius: 6px; background: var(--ok-bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2318794e' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/13px no-repeat; }
 
 /* faq */
 .faq { display: grid; gap: 10px; max-width: 840px; margin-inline: auto; }
