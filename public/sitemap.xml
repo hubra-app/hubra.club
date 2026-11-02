@@ -10,4 +10,64 @@
     <xhtml:link rel="alternate" hreflang="de-CH" href="https://hubra.club/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hubra.club/en/"/>
   </url>
+  <url>
+    <loc>https://hubra.club/en/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://hubra.club/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hubra.club/en/contact/"/>
+  </url>
+  <url>
+    <loc>https://hubra.club/en/faq/</loc>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://hubra.club/fragen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hubra.club/en/faq/"/>
+  </url>
+  <url>
+    <loc>https://hubra.club/en/features/</loc>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://hubra.club/funktionen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hubra.club/en/features/"/>
+  </url>
+  <url>
+    <loc>https://hubra.club/en/plugins/</loc>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://hubra.club/plugins/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hubra.club/en/plugins/"/>
+  </url>
+  <url>
+    <loc>https://hubra.club/en/pricing/</loc>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://hubra.club/preise/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hubra.club/en/pricing/"/>
+  </url>
+  <url>
+    <loc>https://hubra.club/en/security/</loc>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://hubra.club/sicherheit/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hubra.club/en/security/"/>
+  </url>
+  <url>
+    <loc>https://hubra.club/fragen/</loc>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://hubra.club/fragen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hubra.club/en/faq/"/>
+  </url>
+  <url>
+    <loc>https://hubra.club/funktionen/</loc>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://hubra.club/funktionen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hubra.club/en/features/"/>
+  </url>
+  <url>
+    <loc>https://hubra.club/kontakt/</loc>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://hubra.club/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hubra.club/en/contact/"/>
+  </url>
+  <url>
+    <loc>https://hubra.club/plugins/</loc>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://hubra.club/plugins/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hubra.club/en/plugins/"/>
+  </url>
+  <url>
+    <loc>https://hubra.club/preise/</loc>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://hubra.club/preise/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hubra.club/en/pricing/"/>
+  </url>
+  <url>
+    <loc>https://hubra.club/sicherheit/</loc>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://hubra.club/sicherheit/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hubra.club/en/security/"/>
+  </url>
 </urlset>
