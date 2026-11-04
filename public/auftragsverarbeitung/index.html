@@ -40,7 +40,7 @@
     <nav class="nav" id="nav" aria-label="Hauptnavigation">
       <a href="/funktionen/">Funktionen</a>
       <a href="/sicherheit/">Sicherheit</a>
-      <a href="/plugins/">Plugins</a>
+      <a href="/module/">Module</a>
       <a href="/preise/">Preise</a>
       <a href="/fragen/">Fragen</a>
       <a href="/kontakt/">Kontakt</a>
@@ -102,7 +102,7 @@
     <table>
       <thead><tr><th></th><th>Beschreibung</th></tr></thead>
       <tbody>
-        <tr><th>Zweck</th><td>Mitglieder- und Vereinsverwaltung: Mitgliedschaft, Beiträge und Rechnungen, Finanzen, Anlässe und Anwesenheit, Abstimmungen, Gruppen und Ämter, Inventar und Zugänge, Mitteilungen, Vereins-Mail und die vom Verein installierten Plugins.</td></tr>
+        <tr><th>Zweck</th><td>Mitglieder- und Vereinsverwaltung: Mitgliedschaft, Beiträge und Rechnungen, Finanzen, Anlässe und Anwesenheit, Abstimmungen, Gruppen und Ämter, Inventar und Zugänge, Mitteilungen, Vereins-Mail und die weiteren Module, die der Verein einschaltet.</td></tr>
         <tr><th>Betroffene Personen</th><td>Mitglieder, Interessenten und Antragstellende, Vorstand und Funktionäre, Gäste, Eltern oder gesetzliche Vertretungen von minderjährigen Mitgliedern, Kontaktpersonen von Lieferanten und Partnern.</td></tr>
         <tr><th>Datenarten</th><td>Stammdaten (Name, Geburtsdatum, Adresse, Kontaktdaten, Foto), Mitgliedschaftsdaten (Kategorie, Ein- und Austritt, Ämter, Gruppen, Rollen), Finanzdaten (Beiträge, Rechnungen, Zahlungen, IBAN aus Bankdateien), Teilnahme und Anwesenheit, Stimmen, Ausleihen, Schlüssel und Türcodes, Beiträge und Kommentare, Inhalte von Vereinspostfächern, Protokolldaten.</td></tr>
         <tr><th>Besondere Kategorien</th><td>Hubra ist nicht dafür vorgesehen. Erfasst der Verein trotzdem besonders schützenswerte Daten (z. B. Gesundheitsangaben in Freitextfeldern), ist er für die Rechtmässigkeit verantwortlich.</td></tr>
@@ -129,7 +129,7 @@
         <tr><td><span class="todo">Brevo SAS, Paris, FR</span></td><td>Ersatz-Mailversand bei einem Ausfall</td><td>EU</td><td>EU, AVV</td></tr>
       </tbody>
     </table>
-    <p>Nur wenn der Verein oder ein Mitglied die entsprechende Funktion einschaltet, kommen hinzu: Discord Inc. (USA) für das Discord-Plugin und der Push-Dienst des jeweiligen Browsers für Push-Nachrichten. Dienste, die der Verein selbst verbindet (z. B. ein externes Postfach im Plugin «Gemeinsames Postfach»), sind keine Unterauftragsverarbeiter von Hubra.</p>
+    <p>Nur wenn der Verein oder ein Mitglied die entsprechende Funktion einschaltet, kommen hinzu: Discord Inc. (USA) für das Discord-Modul und der Push-Dienst des jeweiligen Browsers für Push-Nachrichten. Dienste, die der Verein selbst verbindet (z. B. ein externes Postfach im Modul «Gemeinsames Postfach»), sind keine Unterauftragsverarbeiter von Hubra.</p>
     <p>Neue oder geänderte Unterauftragsverarbeiter kündigt Hubra mindestens 30 Tage im Voraus per Mail an die Administratoren des Vereins an. Der Verein kann aus wichtigem Datenschutzgrund widersprechen; findet sich keine Lösung, kann er den Vertrag auf den Zeitpunkt der Änderung kündigen. Hubra verpflichtet jeden Unterauftragsverarbeiter vertraglich auf ein gleichwertiges Schutzniveau.</p>
 
     <h2 id="ausland">8. Bekanntgabe ins Ausland</h2>
@@ -165,7 +165,7 @@
     <ul>
       <li>Verschlüsselte Übertragung (TLS) auf allen Verbindungen.</li>
       <li>Protokoll der Änderungen im Verein (wer, was, wann), einsehbar für den Vorstand.</li>
-      <li>Plugins nur aus dem Hubra-Marktplatz, signiert und vor der Installation geprüft.</li>
+      <li>Plugins installiert nur Hubra, nur aus dem Hubra-Marktplatz, signiert und vor der Installation geprüft; Vereine können keinen Code installieren.</li>
       <li>Schutz vor gefälschten Anfragen (CSRF), Begrenzung von Anmeldeversuchen.</li>
     </ul>
     <h3>Verfügbarkeit und Belastbarkeit</h3>
@@ -201,9 +201,7 @@
         <ul>
           <li><a href="/funktionen/">Funktionen</a></li>
           <li><a href="/sicherheit/">Sicherheit</a></li>
-          <li><a href="/plugins/">Plugins</a></li>
-          <li><a href="https://plugins.hubra.club">Plugin-Marktplatz</a></li>
-          <li><a href="https://plugins.hubra.club/entwickeln/">Plugins entwickeln</a></li>
+          <li><a href="/module/">Module</a></li>
           <li><a href="/preise/">Preise</a></li>
           <li><a href="/fragen/">Häufige Fragen</a></li>
         </ul>
@@ -233,6 +231,7 @@
           <li><a href="/kontakt/">Kontakt</a></li>
           <li><a href="mailto:hi@hubra.club">hi@hubra.club</a></li>
           <li><a href="https://github.com/hubra-app">GitHub</a></li>
+          <li><a href="https://plugins.hubra.club/entwickeln/">Plugins für Entwickler</a></li>
           <li><a href="/.well-known/security.txt">Sicherheitslücke melden</a></li>
         </ul>
       </div>
