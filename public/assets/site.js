@@ -225,7 +225,8 @@
       if (!t || typeof t !== 'object') return ''
       return (en ? t.en || t.de : t.de || t.en) || ''
     }
-    var voteUrl = rmBox.getAttribute('data-vote-url') || 'https://sso.hubra.club/roadmap'
+    // A constant, not read from the page: links only ever go to the SSO roadmap.
+    var voteUrl = 'https://sso.hubra.club/roadmap'
     getJSON('/api/v1/global/public/roadmap', function (d) {
       var list = Array.isArray(d.items) ? d.items : []
       if (!list.length) return
