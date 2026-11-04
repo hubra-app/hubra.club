@@ -213,6 +213,76 @@
     })
   }
 
+  // The one Hubra roadmap (planned items and the ideas from clubs, with
+  // votes) from the public API. The static list on the page stays when the
+  // API is down. Voting happens on sso.hubra.club/roadmap (needs an account).
+  var rmBox = document.querySelector('[data-roadmap]')
+  if (rmBox) {
+    var RM = en
+      ? { now: ['In progress', 'What we are working on right now.'], next: ['Up next', 'What comes next.'], later: ['Later', 'Planned, no date yet.'], idea: ['Ideas', 'Ideas from clubs. Vote for what you are missing.'], done: ['Done', 'Already in Hubra.'], vote: 'Vote', one: '1 vote', many: ' votes', shipped: 'in v' }
+      : { now: ['Jetzt in Arbeit', 'Daran arbeiten wir gerade.'], next: ['Als Nächstes', 'Kommt als Nächstes an die Reihe.'], later: ['Später', 'Geplant, aber noch ohne Termin.'], idea: ['Vorschläge', 'Ideen aus den Vereinen. Stimmt für das ab, was euch fehlt.'], done: ['Erledigt', 'Schon in Hubra.'], vote: 'Abstimmen', one: '1 Stimme', many: ' Stimmen', shipped: 'in v' }
+    var pick = function (t) {
+      if (!t || typeof t !== 'object') return ''
+      return (en ? t.en || t.de : t.de || t.en) || ''
+    }
+    // A constant, not read from the page: links only ever go to the SSO roadmap.
+    var voteUrl = 'https://sso.hubra.club/roadmap'
+    getJSON('/api/v1/global/public/roadmap', function (d) {
+      var list = Array.isArray(d.items) ? d.items : []
+      if (!list.length) return
+      var built = document.createDocumentFragment()
+      ;['now', 'next', 'later', 'idea', 'done'].forEach(function (key) {
+        var of = list.filter(function (i) {
+          return i && i.status === key && pick(i.title)
+        })
+        if (!of.length) return
+        var g = el('div', 'rm-group')
+        var h = el('h2', 'rm-head')
+        var dot = el('span', 'rm-dot rm-' + key)
+        dot.setAttribute('aria-hidden', 'true')
+        h.appendChild(dot)
+        h.appendChild(document.createTextNode(RM[key][0] + ' '))
+        h.appendChild(el('span', 'rm-count', String(of.length)))
+        g.appendChild(h)
+        g.appendChild(el('p', 'rm-hint', RM[key][1]))
+        if (key === 'done') {
+          var ul = el('ul', 'rm-done')
+          of.forEach(function (i) {
+            var li = el('li', null, pick(i.title))
+            if (i.version) li.appendChild(el('span', 'rm-ver', RM.shipped + i.version))
+            ul.appendChild(li)
+          })
+          g.appendChild(ul)
+        } else {
+          var grid = el('div', 'grid rm-grid')
+          of.forEach(function (i) {
+            var card = el('article', 'feat')
+            if (pick(i.area)) card.appendChild(el('span', 'tag', pick(i.area)))
+            card.appendChild(el('h3', null, pick(i.title)))
+            var sum = pick(i.summary)
+            if (sum) card.appendChild(el('p', i.source === 'idea' ? 'rm-sum clamp' : 'rm-sum', sum))
+            var n = Number(i.votes) || 0
+            if (i.voteable || n > 0) {
+              var foot = el('p', 'rm-votes')
+              if (n > 0) foot.appendChild(el('span', null, n === 1 ? RM.one : n + RM.many))
+              if (i.voteable) {
+                var a = el('a', null, RM.vote)
+                a.href = voteUrl
+                foot.appendChild(a)
+              }
+              card.appendChild(foot)
+            }
+            grid.appendChild(card)
+          })
+          g.appendChild(grid)
+        }
+        built.appendChild(g)
+      })
+      rmBox.textContent = ''
+      rmBox.appendChild(built)
+    })
+  }
+
   // Legal pages: mark the section being read in the table of contents.
   var tocLinks = Array.prototype.slice.call(document.querySelectorAll('.toc a'))
   if (tocLinks.length && 'IntersectionObserver' in window) {

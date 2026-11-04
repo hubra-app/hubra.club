@@ -471,3 +471,24 @@ a.more-link:hover { text-decoration: underline; }
 .addon-list li div span { color: var(--text-2); font-size: .94rem; }
 .addon-price { font-weight: 600; white-space: nowrap; }
 .plugin-price { font-weight: 600; color: var(--accent-text); }
+
+/* Roadmap (/roadmap/): groups of cards, a short list of what shipped. */
+.rm-group { margin-bottom: 44px; }
+.rm-head { display: flex; align-items: center; gap: 10px; font-size: 1.35rem; font-weight: 750; letter-spacing: -.01em; }
+.rm-dot { width: 10px; height: 10px; border-radius: 99px; flex: none; background: var(--text-3); }
+.rm-dot.rm-now { background: var(--accent); }
+.rm-dot.rm-next { background: #3b82f6; }
+.rm-dot.rm-idea { background: var(--gold); }
+.rm-dot.rm-done { background: #22a06b; }
+.rm-count { font: 600 .8rem/1 var(--body); color: var(--text-2); border: 1px solid var(--border); border-radius: 6px; padding: 4px 7px; }
+.rm-hint { color: var(--text-3); font-size: .92rem; margin: 4px 0 16px; }
+.rm-grid > .feat { min-width: 0; }
+.rm-grid > .feat > * { overflow-wrap: anywhere; }
+.rm-sum.clamp { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; white-space: pre-line; }
+.rm-votes { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; font-size: .9rem; color: var(--text-2); margin-top: 4px; }
+.rm-votes a { font-weight: 600; color: var(--accent-text); }
+.rm-done { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--border); }
+.rm-done li { padding: 10px 0 10px 26px; border-bottom: 1px solid var(--border); position: relative; font-weight: 600; }
+.rm-done li::before { content: ""; position: absolute; left: 4px; top: 16px; width: 10px; height: 6px; border-left: 2px solid #22a06b; border-bottom: 2px solid #22a06b; transform: rotate(-45deg); }
+.rm-ver { margin-left: 8px; font-weight: 400; color: var(--text-3); font-size: .88rem; }
+

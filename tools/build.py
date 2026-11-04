@@ -62,7 +62,7 @@ T = {
         "theme": "Farbschema wechseln",
         "other_lang": ("EN", "en", "English"),
         "foot": [
-            ("Produkt", [("/funktionen/", "Funktionen"), ("/sicherheit/", "Sicherheit"), ("/module/", "Module"), ("/preise/", "Preise"), ("/fragen/", "Häufige Fragen")]),
+            ("Produkt", [("/funktionen/", "Funktionen"), ("/sicherheit/", "Sicherheit"), ("/module/", "Module"), ("/roadmap/", "Roadmap"), ("/preise/", "Preise"), ("/fragen/", "Häufige Fragen")]),
             ("Konto", [(APP, "Anmelden"), (SSO + "/signup", "Konto erstellen"), (SSO + "/start", "Verein starten"), (SSO + "/account", "Mein Konto")]),
             ("Rechtliches", [("/impressum/", "Impressum"), ("/datenschutz/", "Datenschutz"), ("/nutzungsbedingungen/", "Nutzungsbedingungen"), ("/auftragsverarbeitung/", "Auftragsverarbeitung"), ("/cookies/", "Cookies")]),
             ("Kontakt", [("/kontakt/", "Kontakt"), ("mailto:hi@hubra.club", "hi@hubra.club"), ("https://github.com/hubra-app", "GitHub"), ("https://plugins.hubra.club/entwickeln/", "Plugins für Entwickler"), ("/.well-known/security.txt", "Sicherheitslücke melden")]),
@@ -90,7 +90,7 @@ T = {
         "theme": "Change colour scheme",
         "other_lang": ("DE", "de-CH", "Deutsch"),
         "foot": [
-            ("Product", [("/en/features/", "Features"), ("/en/security/", "Security"), ("/en/modules/", "Modules"), ("/en/pricing/", "Pricing"), ("/en/faq/", "FAQ")]),
+            ("Product", [("/en/features/", "Features"), ("/en/security/", "Security"), ("/en/modules/", "Modules"), ("/en/roadmap/", "Roadmap"), ("/en/pricing/", "Pricing"), ("/en/faq/", "FAQ")]),
             ("Account", [(APP, "Sign in"), (SSO + "/signup", "Create an account"), (SSO + "/start", "Start a club"), (SSO + "/account", "My account")]),
             ("Legal", [("/en/imprint/", "Imprint"), ("/en/privacy/", "Privacy"), ("/en/terms/", "Terms of use"), ("/en/dpa/", "Data processing"), ("/en/cookies/", "Cookies")]),
             ("Contact", [("/en/contact/", "Contact"), ("mailto:hi@hubra.club", "hi@hubra.club"), ("https://github.com/hubra-app", "GitHub"), ("https://plugins.hubra.club/en/develop/", "Plugins for developers"), ("/.well-known/security.txt", "Report a vulnerability")]),
