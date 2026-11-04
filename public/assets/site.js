@@ -70,7 +70,7 @@
   })
   if (tabs.length) select(tabs[0], false)
 
-  // Plans, add-ons and plugin prices from the public Hubra API. Only what
+  // Plans, add-ons and module (plugin) prices from the public Hubra API. Only what
   // is marked public in manage shows up; if the API is down or nothing is
   // public yet, the static text on the page stays as it is.
   var API = window.HUBRA_API || 'https://api.hubra.club'
@@ -190,7 +190,7 @@
         if (!card) {
           card = el('article', 'feat')
           card.setAttribute('data-plugin', p.id)
-          card.appendChild(el('span', 'tag', 'Plugin'))
+          card.appendChild(el('span', 'tag', en ? 'Module' : 'Modul'))
           card.appendChild(el('h3', null, p.name))
           if (p.description) card.appendChild(el('p', null, p.description))
           pluginGrid.appendChild(card)

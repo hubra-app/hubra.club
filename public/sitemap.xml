@@ -26,9 +26,9 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://hubra.club/en/features/"/>
   </url>
   <url>
-    <loc>https://hubra.club/en/plugins/</loc>
-    <xhtml:link rel="alternate" hreflang="de-CH" href="https://hubra.club/plugins/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hubra.club/en/plugins/"/>
+    <loc>https://hubra.club/en/modules/</loc>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://hubra.club/module/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hubra.club/en/modules/"/>
   </url>
   <url>
     <loc>https://hubra.club/en/pricing/</loc>
@@ -56,9 +56,9 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://hubra.club/en/contact/"/>
   </url>
   <url>
-    <loc>https://hubra.club/plugins/</loc>
-    <xhtml:link rel="alternate" hreflang="de-CH" href="https://hubra.club/plugins/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hubra.club/en/plugins/"/>
+    <loc>https://hubra.club/module/</loc>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://hubra.club/module/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hubra.club/en/modules/"/>
   </url>
   <url>
     <loc>https://hubra.club/preise/</loc>
