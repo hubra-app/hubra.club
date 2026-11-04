@@ -36,6 +36,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://hubra.club/en/pricing/"/>
   </url>
   <url>
+    <loc>https://hubra.club/en/roadmap/</loc>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://hubra.club/roadmap/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hubra.club/en/roadmap/"/>
+  </url>
+  <url>
     <loc>https://hubra.club/en/security/</loc>
     <xhtml:link rel="alternate" hreflang="de-CH" href="https://hubra.club/sicherheit/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hubra.club/en/security/"/>
@@ -64,6 +69,11 @@
     <loc>https://hubra.club/preise/</loc>
     <xhtml:link rel="alternate" hreflang="de-CH" href="https://hubra.club/preise/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hubra.club/en/pricing/"/>
+  </url>
+  <url>
+    <loc>https://hubra.club/roadmap/</loc>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://hubra.club/roadmap/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hubra.club/en/roadmap/"/>
   </url>
   <url>
     <loc>https://hubra.club/sicherheit/</loc>
