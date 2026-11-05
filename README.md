@@ -19,9 +19,14 @@ page), in light and dark mode.
 | `public/.well-known/security.txt` | Where to report security problems |
 | `public/bimi.svg` | Sender logo for mail (BIMI, SVG Tiny PS). Copy of `brand/hubra-bimi.svg` in hubra-app/hubra |
 
-Pages: home (`/`, `/en/`), Datenschutz/privacy, Impressum/imprint,
-Nutzungsbedingungen/terms, Auftragsverarbeitung/dpa, cookies, 404. The legal
-pages are drafts (yellow notice, `noindex`) until they are reviewed.
+Pages, German and English: home (`/`, `/en/`), Funktionen/features,
+Module/modules, Plugins, Preise/pricing, Roadmap, Fragen/faq, Sicherheit/security,
+Kontakt/contact, and the legal pages Datenschutz/privacy, Impressum/imprint,
+Nutzungsbedingungen/terms, Auftragsverarbeitung/dpa and cookies; plus 404.
+The legal pages are drafts (yellow notice, `noindex`) until they are
+reviewed. The Modules page lists every official plugin; when one is released
+or added, follow the checklist in
+[hubra/docs/plugin-releases.md](https://github.com/hubra-app/hubra/blob/main/docs/plugin-releases.md).
 
 ## Editing
 
