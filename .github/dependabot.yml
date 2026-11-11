@@ -1,0 +1,11 @@
+# Keeps the SHA-pinned GitHub Actions up to date. The site has no npm or
+# Python dependencies (tools/build.py is standard library only).
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      actions:
+        patterns: ["*"]
