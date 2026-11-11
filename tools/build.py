@@ -178,6 +178,28 @@ def expand(body: str, t: dict) -> str:
     return body
 
 
+# Content Security Policy, sent as a <meta> tag because GitHub Pages cannot
+# set response headers. Scripts, styles, fonts and images come only from this
+# site; site.js may call the public Hubra API. Inline styles stay allowed for
+# the style="" attributes in the pages; inline scripts and event handlers are
+# not, and check_unsafe() keeps them out. frame-ancestors is ignored in a
+# <meta> tag, so it is not listed.
+CSP = "; ".join(
+    [
+        "default-src 'self'",
+        "script-src 'self'",
+        "style-src 'self' 'unsafe-inline'",
+        "img-src 'self' data:",
+        "font-src 'self'",
+        "connect-src 'self' https://api.hubra.club",
+        "object-src 'none'",
+        "base-uri 'self'",
+        "form-action 'self'",
+        "upgrade-insecure-requests",
+    ]
+)
+
+
 def render(page: Page, pages_by_path: dict[str, Page]) -> str:
     t = T[page.lang]
     esc = html.escape
@@ -189,6 +211,8 @@ def render(page: Page, pages_by_path: dict[str, Page]) -> str:
         "<head>",
         '<meta charset="utf-8">',
         '<meta name="viewport" content="width=device-width, initial-scale=1">',
+        f'<meta http-equiv="Content-Security-Policy" content="{CSP}">',
+        '<meta name="referrer" content="strict-origin-when-cross-origin">',
         f"<title>{esc(full_title)}</title>",
         f'<meta name="description" content="{esc(page.description)}">',
     ]
@@ -331,6 +355,26 @@ def check_links(outputs: dict[Path, str]) -> list[str]:
     return problems
 
 
+def check_unsafe(outputs: dict[Path, str]) -> list[str]:
+    """Things the CSP would block or that open a page to script injection:
+    inline <script>, on*="" handlers, javascript: links, and target=_blank
+    links without rel="noopener"."""
+    problems = []
+    for path, text in outputs.items():
+        name = path.relative_to(ROOT)
+        for tag in re.findall(r"<script\b[^>]*>", text, re.I):
+            if not re.search(r'\ssrc="/', tag):
+                problems.append(f"{name}: inline or external script {tag}: use a file in public/assets/")
+        if re.search(r"<[a-z][^>]*\son[a-z]+\s*=", text, re.I):
+            problems.append(f"{name}: inline event handler (on...=): move it to site.js")
+        if re.search(r"""(?:href|src|action)\s*=\s*["']?\s*javascript:""", text, re.I):
+            problems.append(f"{name}: javascript: URL")
+        for tag in re.findall(r"<a\b[^>]*target=\"_blank\"[^>]*>", text, re.I):
+            if "noopener" not in tag:
+                problems.append(f'{name}: target="_blank" without rel="noopener" in {tag}')
+    return problems
+
+
 def main() -> int:
     check = "--check" in sys.argv[1:]
     pages = [read_page(p) for p in sorted(SRC.rglob("*.html"))]
@@ -344,7 +388,7 @@ def main() -> int:
     outputs: dict[Path, str] = {p.out: render(p, by_path) for p in pages}
     outputs[OUT / "sitemap.xml"] = sitemap(pages)
 
-    problems = check_links(outputs)
+    problems = check_links(outputs) + check_unsafe(outputs)
     if check:
         for path, text in outputs.items():
             if not path.exists() or path.read_text(encoding="utf-8") != text:
