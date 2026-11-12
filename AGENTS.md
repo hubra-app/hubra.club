@@ -12,7 +12,7 @@ The Hubra website: plain static files in `public/`, built from `src/pages/` (Ger
 
 1. **Branch:** work on your own branch, never push to `main`. One topic per branch and pull request.
 2. **Before you push**, run what CI runs and make it pass locally:
-   - `python3 tools/build.py (then commit public/)`
+   - `python3 tools/build.py` (then commit `public/`)
    - `python3 tools/build.py --check`
 3. **Pull request:** open it as a **draft** and fill in the template
    (`.github/pull_request_template.md`). Link the issue.
