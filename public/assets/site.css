@@ -138,8 +138,9 @@ code { font-family: var(--mono); font-size: .86em; background: var(--surface-2);
 .theme-btn[data-mode="auto"] .i-auto, .theme-btn[data-mode="light"] .i-light, .theme-btn[data-mode="dark"] .i-dark { display: block; }
 .lang { font: 600 .8rem/1 var(--body); letter-spacing: .04em; color: var(--text-2); text-decoration: none; border: 1px solid var(--border); border-radius: 10px; height: 38px; padding: 0 11px; display: inline-flex; align-items: center; }
 .lang:hover { color: var(--text); background: var(--surface-2); }
-.signin { color: var(--text-2); text-decoration: none; font-weight: 600; font-size: .95rem; padding: 8px 10px; border-radius: 8px; }
-.signin:hover { color: var(--text); background: var(--surface-2); }
+/* Sign in is the header's main action: filled, a bit wider, and the one button left on phones. */
+.top .signin { padding: 0 18px; }
+.top .signin svg { width: 17px; height: 17px; }
 
 /* ── buttons: Mantine buttons in the app (radius md, weight 600) ────────── */
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font: 600 1rem/1 var(--body); text-decoration: none; border-radius: 10px; padding: 14px 20px; border: 1px solid transparent; cursor: pointer; transition: transform .15s ease, background-color .15s ease, border-color .15s ease; white-space: nowrap; }
@@ -408,7 +409,6 @@ section { padding-block: 96px; }
 }
 @media (max-width: 960px) {
   .js .menu-btn { display: inline-grid; }
-  .signin { display: none; }
   .nav { display: none; position: absolute; top: 64px; left: 0; right: 0; margin: 0; flex-direction: column; gap: 2px; padding: 12px 16px 16px; background: var(--surface); border-bottom: 1px solid var(--border); box-shadow: var(--shadow-md); }
   .nav.open { display: flex; }
   .nav a { padding: 12px; font-size: 1rem; }
@@ -425,7 +425,8 @@ section { padding-block: 96px; }
 }
 @media (max-width: 640px) {
   body { font-size: 16px; }
-  .top .btn, .top .lang { display: none; }
+  .top .start, .top .lang { display: none; }
+  .top .signin { padding: 0 14px; }
   .hero { padding-top: 56px; }
   .hero-shot { margin-top: 44px; }
   section { padding-block: 64px; }
@@ -437,6 +438,12 @@ section { padding-block: 96px; }
   .proof .sep { display: none; }
   .foot-base { flex-direction: column; }
   .cta .btn { flex: 1 1 100%; }
+}
+@media (max-width: 380px) {
+  .top .wrap { gap: 12px; }
+  .top-actions { gap: 4px; }
+  .top .signin { padding: 0 10px; }
+  .top .signin svg { display: none; }
 }
 
 /* ── multi-page: page heroes, link cards, active nav ────────────────────── */
