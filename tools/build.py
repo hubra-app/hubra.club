@@ -113,6 +113,7 @@ ICON_THEME = (
     '<svg class="i-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>'
 )
 ICON_MENU = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>'
+ICON_SIGNIN = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/></svg>'
 
 
 @dataclass
@@ -266,15 +267,15 @@ def render(page: Page, pages_by_path: dict[str, Page]) -> str:
     <nav class="nav" id="nav" aria-label="{t["nav_label"]}">
 {nav}
       <span class="nav-extra">
-        {link(APP, t["signin"])}
+        {link(SSO + "/start", t["start"])}
         {link(other_href, other_name, hreflang=other_hreflang, lang=other_hreflang)}
       </span>
     </nav>
     <div class="top-actions">
       <button class="icon-btn theme-btn" type="button" aria-label="{t["theme"]}" title="{t["theme"]}" hidden>{ICON_THEME}</button>
       <a class="lang" href="{other_href}" hreflang="{other_hreflang}" lang="{other_hreflang}" title="{other_name}">{other_label}</a>
-      <a class="signin" href="{APP}">{t["signin"]}</a>
-      <a class="btn btn-p btn-sm" href="{SSO}/start">{t["start"]}</a>
+      <a class="btn btn-s btn-sm start" href="{SSO}/start">{t["start"]}</a>
+      <a class="btn btn-p btn-sm signin" href="{APP}">{ICON_SIGNIN}{t["signin"]}</a>
       <button class="icon-btn menu-btn" type="button" aria-label="{t["menu"]}" aria-expanded="false" aria-controls="nav" hidden>{ICON_MENU}</button>
     </div>
   </div>
